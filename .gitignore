@@ -4,6 +4,7 @@ vim/vim/bundle/
 # vimperator関係
 vimperator/vimperator/caisui
 vimperator/vimperator/vimpr
+vimperator/vimperator/info/default/history-command
 
 # mlterm関係
 mlterm/challenge

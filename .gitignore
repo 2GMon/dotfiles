@@ -1,0 +1,10 @@
+# vim関係
+vim/vim/bundle/
+
+# vimperator関係
+vimperator/vimperator/caisui
+vimperator/vimperator/vimpr
+
+# mlterm関係
+mlterm/challenge
+mlterm/msg.log

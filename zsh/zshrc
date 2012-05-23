@@ -1,0 +1,105 @@
+export TERM=mlterm-256color
+# dart
+export DART_SDK=$HOME/applications/dart-sdk
+#補完
+autoload -U compinit
+compinit
+
+alias vi='vim'
+alias ls='ls --color=auto -CFG'
+source ~/.alias
+
+export EDITOR=vim
+#iBus Configuration
+export GTK_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+export QT_IM_MODULE=ibus
+
+#プロンプト
+#通常
+PROMPT="%B%F{green}%m%k %B%F{blue}%n%% %b%f%k"
+RPROMPT="[%~]"
+#複数行入力時
+PROMPT2="%/%% "
+#コマンドエラー確認時
+SPROMPT="%r is correct? [n,y,a,e]; "
+
+#コマンド履歴
+HISTFILE=~/.zsh_history
+HISTSIZE=100000
+SAVEHIST=100000
+setopt hist_ignore_dups
+setopt share_history
+
+#Viライクキーバインド
+bindkey -v
+
+#Viモード表示
+function zle-line-init zle-keymap-select {
+case $KEYMAP in
+	vicmd)
+		RPROMPT="[%{$fg_bold[red]%}NOR%{$reset_color%}] %{$fg_bold[white]%}[%~]$reset_color%} "
+		;;
+	main|viins)
+		RPROMPT="[%{$fg_bold[cyan]%}INS%{$reset_color%}] %{$fg_bold[white]%}[%~]$reset_color%} "
+		;;
+esac
+zle reset-prompt
+}
+zle -N zle-line-init
+zle -N zle-keymap-select
+
+#履歴検索ショートカット
+autoload history-search-end
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+bindkey "^P" history-beginning-search-backward-end
+bindkey "^N" history-beginning-search-forward-end
+
+#オートCD
+setopt auto_cd
+setopt auto_pushd
+
+#コマンド間違い指摘
+setopt correct
+
+#保管候補詰めて表示
+setopt list_packed
+
+#補完時のビープ音鳴らさない
+setopt nolistbeep
+
+#補完候補も色分け
+zstyle ':completion:*' list-colors ''
+
+#.zshrc.mineがあれば読み込み
+[ -f ~/.zshrc.mine ] && source ~/.zshrc.mine
+
+#Z
+_Z_CMD=j
+source ~/applications/z/z.sh
+precmd() {
+    _z --add "$(pwd -P)"
+}
+
+#sudo.vimを意識せずに使えるようにする
+sudo() {
+  local args
+  case $1 in
+    vi|vim)
+      args=()
+      for arg in $@[2,-1]
+      do
+        if [ $arg[1] = '-' ]; then
+          args[$(( 1+$#args ))]=$arg
+        else
+          args[$(( 1+$#args ))]="sudo:$arg"
+        fi
+      done
+      command vim $args
+      ;;
+    *)
+      command sudo $@
+      ;;
+  esac
+}

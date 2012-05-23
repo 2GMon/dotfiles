@@ -1,0 +1,177 @@
+" vim: set ft=vimperator:
+"3.0 (created: 2010/04/07 18:56:53)
+
+source! /home/t2gmon/.vimperatorrc.local
+
+set gui=noaddons,nobookmarks,nomenu,nonavigation,tabs
+
+set newtab="all"
+highlight! Hint z-index:5000; font-family:selif; font-weight:bold; font-size:16px; color:white; background-color:red; border-color:ButtonShadow; border-width:0px; border-style:solid; padding:1px 2px 1px 3px; position:absolute; text-transform: uppercase;
+
+
+"+----------------------------------------------------------------------------------------+
+" キーマップ設定
+"+----------------------------------------------------------------------------------------+
+
+"yで選択範囲をコピー
+"map y :echo 'Yank!'<CR>Y
+"h/j/k/lの移動量を多く
+nnoremap j 5<C-e>
+nnoremap k 5<C-y>
+"H/Lでタブ移動
+map H <C-p>
+map L <C-n>
+"</>で戻る、進む
+map < :back<CR>
+map > :forward<CR>
+"<S-Left>/<S-Right>で現在のタブの位置変更
+map <S-Left>  :tabmove! -1<CR>
+map <S-Right> :tabmove! +1<CR>
+map p :set hintchars=hjklasdfgyuiopqwertnmzxcvb<CR>:set hintmatching=contains<CR>:echomsg "alphabet"<CR>
+map P :set hintmatching=custom<CR>:set hintchars=0123456789<CR>:echomsg "migemo"<CR>
+map b :emenu Tools.Clearly<CR>
+"直前にフォーカスしていたタブに戻す
+map d <C-w>
+"hintcharをアルファベットに
+set hintchars=hjklasdfgyuiopqwertnmzxcvb
+"set hintmatching=custom
+
+"+----------------------------------------------------------------------------------------+
+" plugin_loader.js
+"+----------------------------------------------------------------------------------------+
+let g:plugin_loader_roots = "~/.vimperator/vimpr/ ~/.vimperator/caisui/plugin/"
+let g:plugin_loader_plugins = "_libly,appendAnchor,caret-hint,commandBookmarklet,copy,feedSomeKeys_3,hintchars-ex,pluginManager,stella,twittperator,zip-de-download,reload-image,slideshare,liberator-overlay-ext,migemo-find,migemo_hint,escape-from-iframe"
+
+"+----------------------------------------------------------------------------------------+
+" appendAnchor.js (urlっぽい文字列をリンクに変換)
+"+----------------------------------------------------------------------------------------+
+let g:auto_append_anchor="true"
+let g:auto_append_anchor_once="true"
+
+"+----------------------------------------------------------------------------------------+
+" stella.js(ニコ動、YouTube、Viemoでキーボード操作)
+"+----------------------------------------------------------------------------------------+
+javascript <<EOF
+function addLocalMappings(buffer, maps) {
+	maps.forEach(
+			function (map) {
+			let [cmd, action, extra] = map;
+			let actionFunc = action;
+			extra || (extra = {});
+
+			if (typeof action == "string") {
+			if (action.charAt(0) == ':')
+			actionFunc = extra.open ? function () commandline.open("", action, modes.EX)
+			: function () liberator.execute(action);
+			else
+			actionFunc = function () events.feedkeys(action, extra.noremap, true);
+			}
+			extra.matchingUrls = buffer;
+			mappings.addUserMap(
+				[modes.NORMAL],
+				[cmd],
+				"Local mapping for " + buffer,
+				actionFunc,
+				extra
+				);
+			}
+	);
+}
+addLocalMappings(
+		/^(http:\/\/(es|www).nicovideo.jp\/(watch|playlist\/mylist)|http:\/\/(jp|www)\.youtube\.com\/watch|http:\/\/(www\.)?vimeo\.com\/(channels\/(hd)?#)?\d+)/,
+		[
+		['<C-g>', ':pageinfo S',      ],
+		['p',     ':stplay',          ],
+		['m',     ':stmute',          ],
+		['c',     ':stcomment',       ],
+		['zz',    ':stlarge',         ],
+		['r',     ':strepeat',        ],
+		['+',     ':stvolume! 10',    ],
+		['-',     ':stvolume! -10',   ],
+		['h',     ':stseek! -10',     ],
+		['l',     ':stseek! 10',      ],
+		['k',     ':stvolume! 10',    ],
+		['j',     ':stvolume! -10',   ],
+		['s',     ':stseek ',         {open: true}],
+		['S',     ':stseek! ',        {open: true}],
+		['v',     ':stvolume ',       {open: true}],
+		['V',     ':stvolume! ',      {open: true}],
+		['o',     ':strelations ',    {open: true}],
+		['O',     ':strelations! ',   {open: true}],
+		]
+		);
+EOF
+
+"+----------------------------------------------------------------------------------------+
+" zipDeDownload.js (画像をzipで固めてダウウンロード)
+"+----------------------------------------------------------------------------------------+
+let g:zipDownloadDir="~/Downloads"
+
+"+----------------------------------------------------------------------------------------+
+" twittperator.js
+"+----------------------------------------------------------------------------------------+
+let g:twittperator_use_chirp=1
+let g:twittperator_plugin_echo_tweet=1
+"let g:twittperator_plugin_reply_popup_alert = 0
+let g:twittperator_screen_name = "2GMon"
+let g:twittperator_use_ssl_connection_for_api_ep = 1
+
+"+----------------------------------------------------------------------------------------+
+" feedSomeKeys_3.js
+"+----------------------------------------------------------------------------------------+
+command! -nargs=+ lazy autocmd VimperatorEnter .* <args>
+"Google Reader
+lazy fmaps -u='www\.google\.(co\.jp|com)/reader' -events=vkeypress n p m s v o A r S N P X O gh ga gs gt gu u / ? J K
+"GMail
+"lazy fmaps -u='mail\.google\.com/mail' c / j k n p o u e x s r a # [ ] ? gi gs gt gd ga gc - + *a *n *r *u *s *t R I
+"lazy fmaps -u='mail\.google\.com/mail/.*/[0-9a-f]+$' c / j,n k,p n,j p,k o u e x s r a # [ ] ? gi gs gt gd ga gc - + R
+lazy fmaps -u='mail\.google\.com/mail' -frame=4 -events=vkeydown,keypress,vkeyup j k
+lazy fmaps -u='mail\.google\.com/mail' -frame=4 c n p o u x s r a ? # gi gs gt gd ga gc gl I
+lazy fmaps -u='mail\.google\.com/mail' -frame=4 -p=<Leader> d,# s,! e
+lazy fmaps -u='mail\.google\.com/mail/.*/[0-9a-f]+$' -frame=4 c j,n k,p n,j p,k o u x s r a ? gi gs gt gd ga gc
+lazy fmaps -u='mail\.google\.com/mail/.*/[0-9a-f]+$' -frame=4 -p=<Leader> d,# s,! e
+"Crowsnest
+lazy fmaps -urls="www\\.crowsnest\\.tv" -events=vkeydown j k o l i p s a e h r u f
+lazy fmaps -urls="www\\.crowsnest\\.tv" ?
+lazy fmap -urls="www\\.crowsnest\\.tv" -events=vkeydown g g
+
+"+----------------------------------------------------------------------------------------+
+" copy.js
+"+----------------------------------------------------------------------------------------+
+javascript <<EOF
+liberator.globalVariables.copy_templates = [
+{ label: 'ggl', value: 'Copy title & goo.gl', custom: function() { return '「' +  buffer.title + '」 ' + getShortUrl();}, map: ',cg' },
+{ label: 'titleAndURL',    value: '"%TITLE%" %URL%', map: ',cc' },
+{ label: 'title',          value: '%TITLE%' },
+{ label: 'tDiary',         value: '{{a \'%TITLE%|%URL%\'}}' }
+];
+
+var getShortUrl = function() {
+    var longUrl = content.document.location.href;
+
+    var googl = {
+        'url' : 'https://www.googleapis.com/urlshortener/v1/url',
+        'method' : 'POST',
+        'contentType' : 'application/json',
+        'longJson' : '{ "longUrl" : "' + longUrl + '" }'
+    };
+
+    var request = new XMLHttpRequest();
+    request.open(googl.method, googl.url, false);
+    request.setRequestHeader('Content-Type', googl.contentType);
+    request.send(googl.longJson);
+
+    return JSON.parse(request.responseText).id;
+};
+EOF
+
+"+----------------------------------------------------------------------------------------+
+" slideshare.js
+"+----------------------------------------------------------------------------------------+
+nnoremap -urls=www\\.slideshare\\.net l :slideshare next<CR>
+nnoremap -urls=www\\.slideshare\\.net h :slideshare prev<CR>
+
+"+----------------------------------------------------------------------------------------+
+" liberator-overlay-ext.js
+"+----------------------------------------------------------------------------------------+
+:js mappings.addUserMap([modes.COMMAND_LINE], ["<C-g>"], "", function () plugins.liberatorOverlayExt.toggleShowBackground());

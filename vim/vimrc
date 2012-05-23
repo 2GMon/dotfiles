@@ -192,6 +192,14 @@ let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
 let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
 
 
+" Gtagsの設定
+map <C-g> :Gtags 
+map <C-i> :Gtags -f %<CR>
+map <C-j> :GtagsCursor<CR>
+map <C-n> :cn<CR>
+map <C-p> :cp<CR>
+
+
 " vimfiler
 let g:vimfiler_as_default_explorer=1
 

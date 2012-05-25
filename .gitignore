@@ -5,6 +5,9 @@ vim/vim/bundle/
 vimperator/vimperator/caisui
 vimperator/vimperator/vimpr
 vimperator/vimperator/info/default/history-command
+vimperator/vimperator/info/default/history-search
+vimperator/vimperator/info/default/local-marks
+vimperator/vimperator/info/default/twittperator
 
 # mlterm関係
 mlterm/challenge

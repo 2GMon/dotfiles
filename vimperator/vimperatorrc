@@ -40,7 +40,7 @@ set hintchars=hjklasdfgyuiopqwertnmzxcvb
 " plugin_loader.js
 "+----------------------------------------------------------------------------------------+
 let g:plugin_loader_roots = "~/.vimperator/vimpr/ ~/.vimperator/caisui/plugin/"
-let g:plugin_loader_plugins = "_libly,appendAnchor,caret-hint,commandBookmarklet,copy,feedSomeKeys_3,hintchars-ex,pluginManager,stella,twittperator,zip-de-download,reload-image,slideshare,liberator-overlay-ext,migemo-find,migemo_hint,escape-from-iframe"
+let g:plugin_loader_plugins = "_libly,appendAnchor,caret-hint,commandBookmarklet,copy,hintchars-ex,pluginManager,stella,twittperator,zip-de-download,reload-image,slideshare,liberator-overlay-ext,migemo-find,migemo_hint,escape-from-iframe"
 
 "+----------------------------------------------------------------------------------------+
 " appendAnchor.js (urlっぽい文字列をリンクに変換)
@@ -115,25 +115,6 @@ let g:twittperator_plugin_echo_tweet=1
 "let g:twittperator_plugin_reply_popup_alert = 0
 let g:twittperator_screen_name = "2GMon"
 let g:twittperator_use_ssl_connection_for_api_ep = 1
-
-"+----------------------------------------------------------------------------------------+
-" feedSomeKeys_3.js
-"+----------------------------------------------------------------------------------------+
-command! -nargs=+ lazy autocmd VimperatorEnter .* <args>
-"Google Reader
-lazy fmaps -u='www\.google\.(co\.jp|com)/reader' -events=vkeypress n p m s v o A r S N P X O gh ga gs gt gu u / ? J K
-"GMail
-"lazy fmaps -u='mail\.google\.com/mail' c / j k n p o u e x s r a # [ ] ? gi gs gt gd ga gc - + *a *n *r *u *s *t R I
-"lazy fmaps -u='mail\.google\.com/mail/.*/[0-9a-f]+$' c / j,n k,p n,j p,k o u e x s r a # [ ] ? gi gs gt gd ga gc - + R
-lazy fmaps -u='mail\.google\.com/mail' -frame=4 -events=vkeydown,keypress,vkeyup j k
-lazy fmaps -u='mail\.google\.com/mail' -frame=4 c n p o u x s r a ? # gi gs gt gd ga gc gl I
-lazy fmaps -u='mail\.google\.com/mail' -frame=4 -p=<Leader> d,# s,! e
-lazy fmaps -u='mail\.google\.com/mail/.*/[0-9a-f]+$' -frame=4 c j,n k,p n,j p,k o u x s r a ? gi gs gt gd ga gc
-lazy fmaps -u='mail\.google\.com/mail/.*/[0-9a-f]+$' -frame=4 -p=<Leader> d,# s,! e
-"Crowsnest
-lazy fmaps -urls="www\\.crowsnest\\.tv" -events=vkeydown j k o l i p s a e h r u f
-lazy fmaps -urls="www\\.crowsnest\\.tv" ?
-lazy fmap -urls="www\\.crowsnest\\.tv" -events=vkeydown g g
 
 "+----------------------------------------------------------------------------------------+
 " copy.js

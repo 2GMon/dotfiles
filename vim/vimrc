@@ -170,6 +170,7 @@ noremap <silent> ,uhy :<C-u>Unite history/yank<CR>
 
 " neocomplcacheの設定
 let g:neocomplcache_enable_at_startup=1
+let g:neocomplcache_force_overwrite_completefunc=1
 imap <C-k> <Plug>(neocomplcache_snippets_expand)
 smap <C-k> <Plug>(neocomplcache_snippets_expand)
 inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"

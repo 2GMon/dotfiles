@@ -115,7 +115,6 @@ let g:twittperator_plugin_echo_tweet=1
 "let g:twittperator_plugin_reply_popup_alert = 0
 let g:twittperator_screen_name = "2GMon"
 let g:twittperator_use_ssl_connection_for_api_ep = 1
-let g:twittperator_plugin_twlist_win = 1
 
 "+----------------------------------------------------------------------------------------+
 " copy.js

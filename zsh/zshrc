@@ -1,4 +1,3 @@
-export TERM=mlterm-256color
 # dart
 export DART_SDK=$HOME/applications/dart-sdk
 #補完

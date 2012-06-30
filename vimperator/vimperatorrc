@@ -30,8 +30,6 @@ map <S-Right> :tabmove! +1<CR>
 map p :set hintchars=hjklasdfgyuiopqwertnmzxcvb<CR>:set hintmatching=contains<CR>:echomsg "alphabet"<CR>
 map P :set hintmatching=custom<CR>:set hintchars=0123456789<CR>:echomsg "migemo"<CR>
 map b :emenu Tools.Clearly<CR>
-"直前にフォーカスしていたタブに戻す
-map d <C-w>
 "hintcharをアルファベットに
 set hintchars=hjklasdfgyuiopqwertnmzxcvb
 "set hintmatching=custom

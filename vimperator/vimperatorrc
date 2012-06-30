@@ -18,6 +18,8 @@ highlight! Hint z-index:5000; font-family:selif; font-weight:bold; font-size:16p
 "h/j/k/lの移動量を多く
 nnoremap j 5<C-e>
 nnoremap k 5<C-y>
+nnoremap J <C-d>
+nnoremap K <C-u>
 "H/Lでタブ移動
 map H <C-p>
 map L <C-n>

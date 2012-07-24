@@ -40,7 +40,14 @@ set hintchars=hjklasdfgyuiopqwertnmzxcvb
 " plugin_loader.js
 "+----------------------------------------------------------------------------------------+
 let g:plugin_loader_roots = "~/.vimperator/vimpr/ ~/.vimperator/caisui/plugin/"
-let g:plugin_loader_plugins = "_libly,appendAnchor,caret-hint,commandBookmarklet,copy,hintchars-ex,pluginManager,stella,twittperator,zip-de-download,reload-image,slideshare,liberator-overlay-ext,migemo-find,migemo_hint,escape-from-iframe,option-selector"
+let g:plugin_loader_plugins = "_libly,appendAnchor,caret-hint,commandBookmarklet,copy,hints-ext,pluginManager,stella,twittperator,zip-de-download,reload-image,slideshare,liberator-overlay-ext,migemo-find,migemo_hint,escape-from-iframe,option-selector"
+
+"+----------------------------------------------------------------------------------------+
+" hints-ext.js
+"+----------------------------------------------------------------------------------------+
+let use_hintchars_ex=1
+let use_hints_ext_hinttags=1
+let use_hints_ext_extendedhinttags=1
 
 "+----------------------------------------------------------------------------------------+
 " appendAnchor.js (urlっぽい文字列をリンクに変換)

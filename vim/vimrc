@@ -36,7 +36,7 @@ NeoBundle 'h1mesuke/textobj-wiw'        " wordの中の単語をtextobjに
 NeoBundle 'tomtom/tcomment_vim'         " コメントのトグル
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'errormarker.vim'
-NeoBundle 'Gist.vim'
+NeoBundle 'mattn/gist-vim'
 NeoBundle 'Align'                       " テキストを表みたいな感じに整形
 NeoBundle 'taku-o/vim-toggle'           " true,falseのトグル
 NeoBundle 'dannyob/quickfixstatus'      " カーソル行のquickfixをコマンド行に表示
@@ -232,6 +232,7 @@ augroup END
 let g:clang_complete_auto=1
 let g:clang_use_library=0
 let g:clang_exec='/usr/bin/clang'
+let g:clang_user_options='2>/dev/null || exit 0'
 set completeopt=menuone " こうしないと候補選択時に Scratch ウィンドウが開く
 
 
@@ -243,6 +244,7 @@ augroup END
 function! MyRubySetting()
   set shiftwidth=2
   set tabstop=2
+  set foldmethod=syntax
 endfunction
 
 

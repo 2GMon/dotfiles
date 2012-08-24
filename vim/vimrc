@@ -166,6 +166,8 @@ noremap <silent> ,ua :UniteWithBufferDir -buffer-name=files buffer file_mru<CR>
 noremap <silent> ,ucs :<C-u>Unite -no-quit -auto-preview colorscheme<CR>
 "" history/yank
 noremap <silent> ,uhy :<C-u>Unite history/yank<CR>
+"" Tab一覧
+noremap <silent> ,ut :<C-u>Unite -immediately tab:no-current<CR>
 
 
 " neocomplcacheの設定

@@ -175,6 +175,8 @@ noremap <silent> ,ucs :<C-u>Unite -no-quit -auto-preview colorscheme<CR>
 noremap <silent> ,uhy :<C-u>Unite history/yank<CR>
 "" Tab一覧
 noremap <silent> ,ut :<C-u>Unite -immediately tab:no-current<CR>
+"" Line
+noremap <silent> ,ul :<C-u>Unite line<CR>
 
 
 " neocomplcacheの設定
@@ -253,7 +255,7 @@ augroup END
 function! MyRubySetting()
   set shiftwidth=2
   set tabstop=2
-  set foldmethod=syntax
+  " set foldmethod=syntax
 endfunction
 
 

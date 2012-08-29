@@ -174,7 +174,7 @@ noremap <silent> ,ucs :<C-u>Unite -no-quit -auto-preview colorscheme<CR>
 "" history/yank
 noremap <silent> ,uhy :<C-u>Unite history/yank<CR>
 "" Tab一覧
-noremap <silent> ,ut :<C-u>Unite -immediately tab:no-current<CR>
+noremap <silent> ,ut :<C-u>Unite tab:no-current<CR>
 "" Line
 noremap <silent> ,ul :<C-u>Unite line<CR>
 

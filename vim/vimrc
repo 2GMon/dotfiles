@@ -68,6 +68,11 @@ NeoBundle 'osyo-manga/neocomplcache-clang_complete'
 NeoBundle "git://github.com/osyo-manga/neocomplcache-snippets-complete-dart.git"
 "" Dart syntax
 NeoBundle "git://github.com/vim-scripts/Dart.git"
+"" Haskell
+NeoBundle 'ujihisa/neco-ghc', {'depends' :
+      \ ['Shougo/neocomplcache']
+      \ }
+NeoBundle 'eagletmt/ghcmod-vim'
 filetype plugin indent on     " required!
 " neobundleの設定ここまで
 " unite-neco {{{
@@ -264,6 +269,16 @@ endfunction
 autocmd BufNewFile,BufRead *.dart setfiletype dart " .dartのファイルを開いた時にファイルタイプ設定
 let s:dart_cmd = "$DART_SDK/bin/dart" " dartのパス
 let g:quickrun_config['dart'] = {'command' : s:dart_cmd} " quickrunにdartのパスを設定
+
+
+" Haskell
+augroup haskell-setting
+  autocmd!
+  autocmd BufWritePost *.hs GhcModCheckAsync
+augroup END
+noremap <silent> ,gmt :GhcModType<CR>
+noremap <silent> ,gmtc :GhcModTypeClear<CR>
+noremap <silent> ,gmc :GhcModCheck<CR>
 
 
 " TeX

@@ -237,6 +237,11 @@ let errormarker_errorgroup = "ErrorMsg"
 let errormarker_warninggroup = "Todo"
 
 
+" Gitvの設定
+nmap <leader>gv :Gitv --all<CR>
+nmap <leader>gV :Gitv! --all<CR>
+
+
 " TXT
 augroup txt-textwidth
   autocmd BufRead *.txt set fo+=mM

@@ -34,13 +34,48 @@ map P :set hintmatching=custom<CR>:set hintchars=0123456789<CR>:echomsg "migemo"
 map b :emenu Tools.Clearly<CR>
 "hintcharをアルファベットに
 set hintchars=hjklasdfgyuiopqwertnmzxcvb
+set hintmatching=contains
 "set hintmatching=custom
 
 "+----------------------------------------------------------------------------------------+
 " plugin_loader.js
 "+----------------------------------------------------------------------------------------+
 let g:plugin_loader_roots = "~/.vimperator/vimpr/ ~/.vimperator/caisui/plugin/"
-let g:plugin_loader_plugins = "_libly,appendAnchor,caret-hint,commandBookmarklet,copy,hints-ext,pluginManager,stella,twittperator,zip-de-download,reload-image,slideshare,liberator-overlay-ext,migemo-find,migemo_hint,escape-from-iframe,option-selector,forcefocuscontent"
+js <<EOF
+liberator.globalVariables.plugin_loader_plugins = <>
+    _libly
+    pluginManager
+    appendAnchor
+    caret-hint
+    commandBookmarklet
+    copy
+    hints-ext
+    pluginManager
+    stella
+    twittperator
+    zip-de-download
+    reload-image
+    slideshare
+    liberator-overlay-ext
+    escape-from-iframe
+    option-selector
+    migemized_find
+    migemo_hint
+    forcefocuscontent
+    command_menu
+    fetchyoutube
+    hints-for-embedded
+    maine_coon
+    open-frame
+    opener
+    refe
+    relative_move
+    removetabs
+    reporter
+    resizable_textarea
+    vimp_to_android_phone
+</>.toString().split(/\s+/).filter(function(n) n);
+EOF
 
 "+----------------------------------------------------------------------------------------+
 " hints-ext.js
@@ -161,3 +196,9 @@ nnoremap -urls=www\\.slideshare\\.net h :slideshare prev<CR>
 " liberator-overlay-ext.js
 "+----------------------------------------------------------------------------------------+
 :js mappings.addUserMap([modes.COMMAND_LINE], ["<C-g>"], "", function () plugins.liberatorOverlayExt.toggleShowBackground());
+
+"+----------------------------------------------------------------------------------------+
+" removetabs.js
+"+----------------------------------------------------------------------------------------+
+noremap <C-S-p> :removetabsleft<CR>
+noremap <C-S-n> :removetabsright<CR>

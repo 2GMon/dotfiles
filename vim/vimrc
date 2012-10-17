@@ -57,6 +57,9 @@ NeoBundle 'kana/vim-tabpagecd'          " タブごとにカレントディレ�
 NeoBundle 'koron/nyancat-vim'           " nyancatのアニメ
 NeoBundle 'nefo-mi/nyan-modoki.vim'     " ステータスラインに顔文字
 NeoBundle 'taglist.vim'
+NeoBundle 'yomi322/vim-gitq', {'depends' :
+      \ ['thinca/vim-quickrun']
+      \ }                                " Gitコマンドをquickrunに投げる
 "" Colorscheme
 NeoBundle 'molokai'
 NeoBundle 'pyte'
@@ -244,6 +247,11 @@ let errormarker_warninggroup = "Todo"
 " Gitvの設定
 nmap <leader>gv :Gitv --all<CR>
 nmap <leader>gV :Gitv! --all<CR>
+
+" Gitqの設定
+let g:gitq_config = {
+      \ 'add/p': { 'runner' : 'shell', },
+      \}
 
 
 " TXT

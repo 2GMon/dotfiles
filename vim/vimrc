@@ -25,6 +25,7 @@ NeoBundle 'h1mesuke/unite-outline'
 NeoBundle 'basyura/wwwrefe.vim'
 NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'mattn/unite-advent_calendar'
+NeoBundle 'tsukkee/unite-tag'
 "" ネタのUnite Source
 NeoBundle 'mattn/unite-nyancat'
 NeoBundle 'osyo-manga/unite-shimapan'
@@ -55,6 +56,7 @@ NeoBundle 'gregsexton/gitv'             " gitk みたいなもの fugitiveが必
 NeoBundle 'kana/vim-tabpagecd'          " タブごとにカレントディレクトリ設定
 NeoBundle 'koron/nyancat-vim'           " nyancatのアニメ
 NeoBundle 'nefo-mi/nyan-modoki.vim'     " ステータスラインに顔文字
+NeoBundle 'taglist.vim'
 "" Colorscheme
 NeoBundle 'molokai'
 NeoBundle 'pyte'
@@ -183,6 +185,8 @@ noremap <silent> ,uhy :<C-u>Unite history/yank<CR>
 noremap <silent> ,ut :<C-u>Unite tab:no-current<CR>
 "" Line
 noremap <silent> ,ul :<C-u>Unite line<CR>
+"" unite-tag
+noremap <silent> ,ug] :<C-u>execute 'Unite tag:' . expand('<cword>')<CR>
 
 
 " neocomplcacheの設定

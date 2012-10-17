@@ -75,6 +75,7 @@ NeoBundle 'altercation/vim-colors-solarized.git'
 NeoBundle 'Rip-Rip/clang_complete'
 NeoBundle 'osyo-manga/neocomplcache-clang_complete'
 "" Ruby
+NeoBundle 'tpope/vim-rails'
 "" Dart snippets
 NeoBundle "git://github.com/osyo-manga/neocomplcache-snippets-complete-dart.git"
 "" Dart syntax

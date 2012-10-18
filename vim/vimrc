@@ -306,6 +306,22 @@ let g:vimfiler_as_default_explorer=1
 
 "vimshell
 nnoremap <silent> ,vs :VimShellTab<CR>
+nnoremap <silent> ,vsi :VimShellInteractive<CR>
+" 選択中に,vss: 非同期で開いたインタプリタに選択行を評価させる
+vmap <silent> ,vss :VimShellSendString<CR>
+" ,vss: 非同期で開いたインタプリタに現在の行を評価させる
+nnoremap <silent> ,vss <S-v>:VimShellSendString<CR>
+"" vimshellの現在行の左上に表示するプロンプト
+let g:vimshell_prompt = $USER."% "
+"" vimshellの現在行の右上に表示するプロンプト
+let g:vimshell_right_prompt = 'fnamemodify(getcwd(), ":~")'
+"" vimshellの環境変数TERM
+let g:vimshell_environment_term = 'vimshell'
+"" vimshellを同じタブ内に開くときの分割Exコマンド(水平分割 20行)
+let g:vimshell_split_command = 'split | resize 20'
+"" Rファイルを開いてる時，VimShellInteractiveでR起動
+call vimshell#set_dictionary_helper(
+      \ g:vimshell_interactive_interpreter_commands, 'r', 'R')
 
 
 " Align(テキスト整形)

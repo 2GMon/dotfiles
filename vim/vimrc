@@ -27,6 +27,8 @@ NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'mattn/unite-advent_calendar'
 NeoBundle 'tsukkee/unite-tag'
 NeoBundle 'osyo-manga/unite-quickfix'
+NeoBundle 'ujihisa/unite-rake'
+NeoBundle 'basyura/unite-rails'
 "" ネタのUnite Source
 NeoBundle 'mattn/unite-nyancat'
 NeoBundle 'osyo-manga/unite-shimapan'

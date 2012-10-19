@@ -1,4 +1,8 @@
 class(Q)=Q="no";print.no=q
+clearAll <- function(){
+  rm(list=ls(all=TRUE))
+  source("~/.Rprofile")
+}
 
 # クロス集計表ここから
 setClass("CrossTable", contains="table")

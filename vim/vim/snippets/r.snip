@@ -1,0 +1,17 @@
+snippet     matrix
+abbr        matrix
+    matrix(${1:list},${2:nrow},${3:ncol})
+
+snippet     matrow
+abbr        matrix by row
+    matrix(${1:list},${2:nrow},${3:ncol},byrow=TRUE)
+
+snippet     for
+abbr        for
+    for (${1:var} in ${2:list}) {
+      ${3}
+    }
+
+snippet     paste
+abbr        paste
+    paste(${1:strings},sep="${2:separator}")

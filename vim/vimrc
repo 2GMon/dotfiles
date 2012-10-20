@@ -72,6 +72,7 @@ NeoBundle 'osyo-manga/vim-watchdogs', {'depends' :
       \ ['thinca/vim-quickrun', 'Shougo/vimproc', 'osyo-manga/shabadou.vim',
       \ 'osyo-manga/unite-quickfix']
       \ }
+NeoBundle 'thinca/vim-partedit'         " バッファ内の一部を別バッファで編集(例:html内のjavascript)
 "" Colorscheme
 NeoBundle 'molokai'
 NeoBundle 'pyte'
@@ -297,6 +298,10 @@ let g:watchdogs_check_BufWritePost_enables = {
       \   "ruby" : 1,
       \   "haskell" : 0
       \ }
+
+
+" parteditの設定
+let g:partedit#opener = 'split'
 
 
 " Gtagsの設定

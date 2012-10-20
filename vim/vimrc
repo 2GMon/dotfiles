@@ -34,7 +34,7 @@ NeoBundle 'mattn/unite-nyancat'
 NeoBundle 'osyo-manga/unite-shimapan'
 "" Bundles
 NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'Shougo/neocomplcache-snippets-complete'
+NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/vimfiler'
 NeoBundle 'Shougo/vinarise'
 NeoBundle 'thinca/vim-ref'
@@ -209,8 +209,6 @@ noremap <silent> ,ug] :<C-u>execute 'Unite tag:' . expand('<cword>')<CR>
 " neocomplcacheの設定
 let g:neocomplcache_enable_at_startup=1
 let g:neocomplcache_force_overwrite_completefunc=1
-imap <C-k> <Plug>(neocomplcache_snippets_expand)
-smap <C-k> <Plug>(neocomplcache_snippets_expand)
 inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
@@ -231,8 +229,10 @@ let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
 let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
 
 
-" neocomplcache-snippets-completeの設定
+" neosnippetの設定
 let g:neosnippet#snippets_directory = '~/.vim/snippets'
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
 
 
 " quickrunの設定

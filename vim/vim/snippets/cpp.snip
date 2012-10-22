@@ -1,0 +1,16 @@
+snippet     class
+abbr        C++ class
+    class ${1:name} {
+    private:
+    public:
+        $1();
+        $1(const $1& obj);
+        ~$1();
+        $1& operator=(const $1& obj);
+    };
+
+snippet     getset
+abbr        getter and setter
+options     head
+  ${1:type} get${2:attr}() { return this->$2; }
+  void set$2($1 $2) { this->$2 = $2; }

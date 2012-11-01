@@ -202,6 +202,10 @@ noremap <silent> ,uhy :<C-u>Unite history/yank<CR>
 noremap <silent> ,ut :<C-u>Unite tab:no-current<CR>
 "" Line
 noremap <silent> ,ul :<C-u>Unite line<CR>
+"" Outline
+noremap <silent> ,uo :<C-u>Unite -no-start-insert -winheight=20 outline<CR>
+"" help
+noremap <silent> ,uhl :<C-u>Unite -winheight=40 help<CR>
 "" unite-tag
 noremap <silent> ,ug] :<C-u>execute 'Unite tag:' . expand('<cword>')<CR>
 

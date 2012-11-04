@@ -29,13 +29,9 @@ map > :forward<CR>
 "<S-Left>/<S-Right>で現在のタブの位置変更
 map <S-Left>  :tabmove! -1<CR>
 map <S-Right> :tabmove! +1<CR>
-map p :set hintchars=hjklasdfgyuiopqwertnmzxcvb<CR>:set hintmatching=contains<CR>:echomsg "alphabet"<CR>
-map P :set hintmatching=custom<CR>:set hintchars=0123456789<CR>:echomsg "migemo"<CR>
 map b :emenu Tools.Clearly<CR>
 "hintcharをアルファベットに
 set hintchars=hjklasdfgyuiopqwertnmzxcvb
-set hintmatching=contains
-"set hintmatching=custom
 
 "+----------------------------------------------------------------------------------------+
 " plugin_loader.js
@@ -60,7 +56,6 @@ liberator.globalVariables.plugin_loader_plugins = <>
     escape-from-iframe
     option-selector
     migemized_find
-    migemo_hint
     forcefocuscontent
     command_menu
     fetchyoutube

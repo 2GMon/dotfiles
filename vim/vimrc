@@ -148,11 +148,7 @@ filetype indent on
 filetype plugin on
 syntax on                       " syntaxカラー有効
 set background=dark
-if has('gui_running')
-  colorscheme solarized
-else
-  colorscheme desert
-endif
+colorscheme desert
 set nrformats=alpha,octal,hex     " Ctrl+A, Ctrl+Xの加算減算で認識する基数
 set wildmode=list,full            " exコマンド時，Tabで補完候補一覧
 set undolevels=10000              " Undoの回数制限

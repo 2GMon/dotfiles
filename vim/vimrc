@@ -78,19 +78,30 @@ NeoBundle 'pyte'
 NeoBundle 'Zenburn'
 NeoBundle 'altercation/vim-colors-solarized.git'
 "" C++
-NeoBundle 'Rip-Rip/clang_complete'
-NeoBundle 'osyo-manga/neocomplcache-clang_complete'
+NeoBundleLazy 'Rip-Rip/clang_complete'
+NeoBundleLazy 'osyo-manga/neocomplcache-clang_complete'
 "" Ruby
-NeoBundle 'tpope/vim-rails'
+NeoBundleLazy 'tpope/vim-rails'
 "" Dart snippets
-NeoBundle "git://github.com/osyo-manga/neocomplcache-snippets-complete-dart.git"
+NeoBundleLazy "git://github.com/osyo-manga/neocomplcache-snippets-complete-dart.git"
 "" Dart syntax
-NeoBundle "git://github.com/vim-scripts/Dart.git"
+NeoBundleLazy "git://github.com/vim-scripts/Dart.git"
 "" Haskell
-NeoBundle 'ujihisa/neco-ghc', {'depends' :
+NeoBundleLazy 'ujihisa/neco-ghc', {'depends' :
       \ ['Shougo/neocomplcache']
       \ }
-NeoBundle 'eagletmt/ghcmod-vim'
+NeoBundleLazy 'eagletmt/ghcmod-vim'
+
+augroup NeoBundleLazySource
+  autocmd!
+  autocmd FileType cpp NeoBundleSource clang_complete
+        \ neocomplcache-clang_complete
+  autocmd FileType ruby NeoBundleSource vim-rails
+  autocmd FileType dart NeoBundleSource neocomplcache-snippets-complete-dart
+        \ Dart.git
+  autocmd FileType haskell NeoBundleSource neco-ghc
+        \ ghcmod-vim
+augroup END
 filetype plugin indent on     " required!
 " neobundleの設定ここまで
 " unite-neco {{{

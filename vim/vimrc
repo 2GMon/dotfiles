@@ -4,6 +4,7 @@ set nocompatible               " be iMproved
 filetype off                   " required!
 filetype plugin indent off     " required!
 if has('vim_starting')
+  set runtimepath&
   set runtimepath+=~/.vim/bundle/neobundle.vim/
   call neobundle#rc(expand('~/.vim/bundle/'))
 endif
@@ -72,6 +73,7 @@ NeoBundle 'osyo-manga/vim-watchdogs', {'depends' :
       \ 'osyo-manga/unite-quickfix']
       \ }
 NeoBundle 'thinca/vim-partedit'         " バッファ内の一部を別バッファで編集(例:html内のjavascript)
+NeoBundle 'matchit.zip'
 "" Colorscheme
 NeoBundle 'molokai'
 NeoBundle 'pyte'
@@ -164,6 +166,7 @@ set nrformats=alpha,octal,hex     " Ctrl+A, Ctrl+Xの加算減算で認識する
 set wildmode=list,full            " exコマンド時，Tabで補完候補一覧
 set undolevels=10000              " Undoの回数制限
 " ステータスラインの設定
+set statusline&
 set statusline=%<%F\ %m%r%h%w%y%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}[POS=%l,%v,%p%%]
 set statusline+=%{fugitive#statusline()}
 set statusline+=%{g:NyanModoki()}
@@ -226,11 +229,14 @@ inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y>  neocomplcache#close_popup()
 inoremap <expr><C-e>  neocomplcache#cancel_popup()
 "" Enable omni completion.
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+augroup omni-setting
+  autocmd!
+  autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+  autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+  autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+  autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+  autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+augroup END
 "" Enable heavy omni completion.
 if !exists('g:neocomplcache_omni_patterns')
   let g:neocomplcache_omni_patterns = {}
@@ -370,6 +376,7 @@ let g:gitq_config = {
 
 " TXT
 augroup txt-textwidth
+  autocmd!
   autocmd BufRead *.txt set fo+=mM
   autocmd BufRead *.txt set textwidth=80
 augroup END
@@ -387,18 +394,20 @@ set completeopt=menuone " こうしないと候補選択時に Scratch ウィン
 " Ruby
 augroup ruby-setting
   autocmd!
-  autocmd FileType ruby call MyRubySetting()" .dartのファイルを開いた時にファイルタイプ設定
+  autocmd FileType ruby call MyRubySetting()
 augroup END
 function! MyRubySetting()
   set shiftwidth=2
   set tabstop=2
-  " set foldmethod=syntax
 endfunction
 
 
 
 " Dart
-autocmd BufNewFile,BufRead *.dart setfiletype dart " .dartのファイルを開いた時にファイルタイプ設定
+augroup dart-setting
+  autocmd!
+  autocmd BufNewFile,BufRead *.dart setfiletype dart " .dartのファイルを開いた時にファイルタイプ設定
+augroup END
 let s:dart_cmd = "$DART_SDK/bin/dart" " dartのパス
 let g:quickrun_config['dart'] = {'command' : s:dart_cmd} " quickrunにdartのパスを設定
 

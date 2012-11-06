@@ -416,10 +416,10 @@ let g:quickrun_config['dart'] = {'command' : s:dart_cmd} " quickrunにdartのパ
 augroup haskell-setting
   autocmd!
   autocmd BufWritePost *.hs GhcModCheckAsync
+  autocmd FileType haskell noremap <buffer><silent> ,gmt :GhcModType<CR>
+  autocmd FileType haskell noremap <buffer><silent> ,gmtc :GhcModTypeClear<CR>
+  autocmd FileType haskell noremap <buffer><silent> ,gmc :GhcModCheck<CR>
 augroup END
-noremap <silent> ,gmt :GhcModType<CR>
-noremap <silent> ,gmtc :GhcModTypeClear<CR>
-noremap <silent> ,gmc :GhcModCheck<CR>
 
 
 " TeX

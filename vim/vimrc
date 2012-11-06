@@ -197,6 +197,7 @@ noremap <silent> ,uhy :<C-u>Unite history/yank<CR>
 noremap <silent> ,ut :<C-u>Unite tab:no-current<CR>
 "" Line
 noremap <silent> ,ul :<C-u>Unite line<CR>
+noremap <silent> ,uL :<C-u>Unite line -no-quit<CR>
 "" Outline
 noremap <silent> ,uo :<C-u>Unite -no-start-insert -winheight=20 outline<CR>
 "" help

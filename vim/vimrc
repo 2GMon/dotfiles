@@ -377,13 +377,17 @@ let g:gitq_config = {
 " TXT
 augroup txt-textwidth
   autocmd!
-  autocmd BufRead *.txt set fo+=mM
-  autocmd BufRead *.txt set textwidth=80
+  autocmd BufRead *.txt setlocal fo+=mM
+  autocmd BufRead *.txt setlocal textwidth=80
 augroup END
 
 
 " C++
 "" clang_complete
+augroup cpp-setting
+  autocmd!
+  autocmd FileType cpp let b:match_words = &matchpairs . b:match_words . ",<:>"
+augroup END
 let g:clang_complete_auto=1
 let g:clang_use_library=0
 let g:clang_exec='/usr/bin/clang'
@@ -394,13 +398,9 @@ set completeopt=menuone " こうしないと候補選択時に Scratch ウィン
 " Ruby
 augroup ruby-setting
   autocmd!
-  autocmd FileType ruby call MyRubySetting()
+  autocmd FileType ruby setlocal shiftwidth=2
+  autocmd FileType ruby setlocal tabstop=2
 augroup END
-function! MyRubySetting()
-  set shiftwidth=2
-  set tabstop=2
-endfunction
-
 
 
 " Dart
@@ -425,8 +425,5 @@ noremap <silent> ,gmc :GhcModCheck<CR>
 " TeX
 augroup tex-mapping
   autocmd!
-  autocmd FileType tex call MyTeXMapping()
+  autocmd FileType tex nnoremap <buffer><C-o> :Unite -no-quite -no-start-insert -winheight=10 outline<CR>
 augroup END
-function! MyTeXMapping()
-  nnoremap <buffer><C-o> :Unite -no-quite -no-start-insert -winheight=10 outline<CR>
-endfunction

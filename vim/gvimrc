@@ -1,1 +1,3 @@
 set guifont=Ricty\ Discord\ 10
+set guioptions-=T " Toolbar削除
+set guioptions-=m " Menubar削除

@@ -1,5 +1,5 @@
 " vim:set ts=2 sw=2 :
-" neobundleの設定
+" neobundleの設定{{{
 set nocompatible               " be iMproved
 filetype off                   " required!
 filetype plugin indent off     " required!
@@ -106,7 +106,7 @@ augroup NeoBundleLazySource
         \ ghcmod-vim
 augroup END
 filetype plugin indent on     " required!
-" neobundleの設定ここまで
+" neobundleの設定ここまで}}}
 " unite-neco {{{
 let s:unite_source = {'name': 'neco'}
 function! s:unite_source.gather_candidates(args, context)
@@ -126,10 +126,12 @@ function! s:unite_source.gather_candidates(args, context)
         \ }')
 endfunction
 call unite#define_source(s:unite_source)
+"}}}
 
 
 let g:quickrun_config = {}
 
+" Vimの設定{{{
 " ファイルエンコードの設定
 set enc=utf-8
 set fenc=utf-8
@@ -183,9 +185,10 @@ function! s:OpenMlterm()
   silent execute '!mlterm &'
 endfunction
 nnoremap <silent> ,ss :<C-u>call <SID>OpenMlterm()<CR>
+"}}}
 
 
-" Uniteの設定
+" Uniteの設定{{{
 let g:unite_enable_start_insert=1 "入力モードで開始する
 let g:unite_source_file_mru_limit=500 " 最近使ったファイルの最大値
 let g:unite_source_history_yank_enable=1 " history/yankの有効化
@@ -226,9 +229,10 @@ function! s:unite_project(...)
   let dir = unite#util#path2project_directory(expand('%'))
   execute 'Unite' opts 'file_rec:' . dir
 endfunction
+"}}}
 
 
-" neocomplcacheの設定
+" neocomplcacheの設定{{{
 let g:neocomplcache_enable_at_startup=1
 let g:neocomplcache_force_overwrite_completefunc=1
 inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
@@ -252,15 +256,17 @@ endif
 let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
 let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
+"}}}
 
 
-" neosnippetの設定
+" neosnippetの設定{{{
 let g:neosnippet#snippets_directory = '~/.vim/snippets'
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
+" }}}
 
 
-" quickrunの設定
+" quickrunの設定 {{{
 "" デフォルトオプション
 """"" hookのロード後にUnite-quickfixを閉じる
 """"" 失敗した場合quickfixの内容をUnite-quickfixで開く
@@ -311,9 +317,10 @@ let g:quickrun_config = {
       \     "hook/close_quickfix/enable_exit" : 0,
       \   },
       \ }
+" }}}
 
 
-" watchdogs.vimの設定
+" watchdogs.vimの設定 {{{
 call watchdogs#setup(g:quickrun_config)
 "" 書き込み後にシンタックスチェックを行う
 "" let g:watchdogs_check_BufWritePost_enable = 1
@@ -323,24 +330,28 @@ let g:watchdogs_check_BufWritePost_enables = {
       \   "ruby" : 1,
       \   "haskell" : 0
       \ }
+" }}}
 
 
-" parteditの設定
+" parteditの設定 {{{
 let g:partedit#opener = 'split'
+" }}}
 
 
-" Gtagsの設定
+" Gtagsの設定 {{{
 map <C-g> :Gtags 
 map <C-i> :Gtags -f %<CR>
 map <C-j> :GtagsCursor<CR>
 map <C-n> :cn<CR>
 map <C-p> :cp<CR>
+" }}}
 
 
-" vimfiler
+" vimfiler {{{
 let g:vimfiler_as_default_explorer=1
+" }}}
 
-"vimshell
+"vimshell {{{
 nnoremap <silent> ,vs :VimShellTab<CR>
 nnoremap <silent> ,vsi :VimShellInteractive<CR>
 " 選択中に,vss: 非同期で開いたインタプリタに選択行を評価させる
@@ -358,41 +369,55 @@ let g:vimshell_split_command = 'split | resize 20'
 "" Rファイルを開いてる時，VimShellInteractiveでR起動
 call vimshell#set_dictionary_helper(
       \ g:vimshell_interactive_interpreter_commands, 'r', 'R')
+" }}}
 
 
-"errormarker.vimの設定
+"errormarker.vimの設定 {{{
 let errormarker_errortext = "!!"
 let errormarker_warningtext = "??"
 let errormarker_errorgroup = "ErrorMsg"
 let errormarker_warninggroup = "Todo"
+" }}}
 
 
-" Gitvの設定
+" Gitvの設定 {{{
 nmap <leader>gv :Gitv --all<CR>
 nmap <leader>gV :Gitv! --all<CR>
+" }}}
 
-" Gitqの設定
+" Gitqの設定 {{{
 let g:gitq_config = {
       \ 'add/p': { 'runner' : 'shell', },
       \}
+" }}}
 
 
-" vim-arpeggioの設定
+" vim-arpeggioの設定 {{{
 call arpeggio#load()
 Arpeggio inoremap jk  <Esc>
 Arpeggio nnoremap fj  <C-d>
 Arpeggio nnoremap fk  <C-u>
+" }}}
 
 
-" TXT
+" Vim {{{
+augroup vim-setting
+  autocmd!
+  autocmd FileType vim set foldmethod=marker
+augroup END
+" }}}
+
+
+" TXT {{{
 augroup txt-textwidth
   autocmd!
   autocmd BufRead *.txt setlocal fo+=mM
   autocmd BufRead *.txt setlocal textwidth=80
 augroup END
+" }}}
 
 
-" C++
+" C++ {{{
 "" clang_complete
 augroup cpp-setting
   autocmd!
@@ -403,26 +428,29 @@ let g:clang_use_library=0
 let g:clang_exec='/usr/bin/clang'
 let g:clang_user_options='2>/dev/null || exit 0'
 set completeopt=menuone " こうしないと候補選択時に Scratch ウィンドウが開く
+" }}}
 
 
-" Ruby
+" Ruby {{{
 augroup ruby-setting
   autocmd!
   autocmd FileType ruby setlocal shiftwidth=2
   autocmd FileType ruby setlocal tabstop=2
 augroup END
+" }}}
 
 
-" Dart
+" Dart {{{
 augroup dart-setting
   autocmd!
   autocmd BufNewFile,BufRead *.dart setfiletype dart " .dartのファイルを開いた時にファイルタイプ設定
 augroup END
 let s:dart_cmd = "$DART_SDK/bin/dart" " dartのパス
 let g:quickrun_config['dart'] = {'command' : s:dart_cmd} " quickrunにdartのパスを設定
+" }}}
 
 
-" Haskell
+" Haskell {{{
 augroup haskell-setting
   autocmd!
   autocmd BufWritePost *.hs GhcModCheckAsync
@@ -430,10 +458,12 @@ augroup haskell-setting
   autocmd FileType haskell noremap <buffer><silent> ,gmtc :GhcModTypeClear<CR>
   autocmd FileType haskell noremap <buffer><silent> ,gmc :GhcModCheck<CR>
 augroup END
+" }}}
 
 
-" TeX
+" TeX {{{
 augroup tex-mapping
   autocmd!
   autocmd FileType tex nnoremap <buffer><C-o> :Unite -no-quite -no-start-insert -winheight=10 outline<CR>
 augroup END
+" }}}

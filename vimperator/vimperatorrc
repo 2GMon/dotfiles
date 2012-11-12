@@ -42,12 +42,9 @@ js <<EOF
 liberator.globalVariables.plugin_loader_plugins = <>
     _libly
     pluginManager
-    appendAnchor
-    caret-hint
     commandBookmarklet
     copy
     hints-ext
-    pluginManager
     stella
     twittperator
     zip-de-download
@@ -65,10 +62,8 @@ liberator.globalVariables.plugin_loader_plugins = <>
     open-frame
     opener
     refe
-    relative_move
     removetabs
     reporter
-    resizable_textarea
     vimp_to_android_phone
 </>.toString().split(/\s+/).filter(function(n) n);
 EOF

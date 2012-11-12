@@ -218,6 +218,13 @@ noremap <silent> ,uo :<C-u>Unite -no-start-insert -winheight=20 outline<CR>
 noremap <silent> ,uhl :<C-u>Unite -winheight=40 help<CR>
 "" unite-tag
 noremap <silent> ,ug] :<C-u>execute 'Unite tag:' . expand('<cword>')<CR>
+"" listing Project file
+nnoremap <silent> ,up :<C-u>call <SID>unite_project('-start-insert')<CR>
+function! s:unite_project(...)
+  let opts = (a:0 ? join(a:000, ' ') : '')
+  let dir = unite#util#path2project_directory(expand('%'))
+  execute 'Unite' opts 'file_rec:' . dir
+endfunction
 
 
 " neocomplcacheの設定

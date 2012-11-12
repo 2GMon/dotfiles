@@ -189,6 +189,7 @@ nnoremap <silent> ,ss :<C-u>call <SID>OpenMlterm()<CR>
 
 
 " Uniteの設定{{{
+let g:unite_source_menu_menus = {}
 let g:unite_enable_start_insert=1 "入力モードで開始する
 let g:unite_source_file_mru_limit=500 " 最近使ったファイルの最大値
 let g:unite_source_history_yank_enable=1 " history/yankの有効化
@@ -229,6 +230,52 @@ function! s:unite_project(...)
   let dir = unite#util#path2project_directory(expand('%'))
   execute 'Unite' opts 'file_rec:' . dir
 endfunction
+"" encode変更
+let g:unite_source_menu_menus.enc = {
+      \ 'description': 'set enc=...',
+      \ }
+let g:unite_source_menu_menus.enc.candidates = {
+      \ 'euc-jp': 'edit ++enc=euc-jp',
+      \ 'utf-8' : 'edit ++enc=utf-8',
+      \ }
+function g:unite_source_menu_menus.enc.map(key, value)
+  return {
+        \ 'word': a:key, 'kind': 'command',
+        \ 'action__command': a:value,
+        \ }
+endfunction
+nnoremap <silent> ,uenc :<C-u>Unite menu:enc<CR>
+"" fileencode変更
+let g:unite_source_menu_menus.fenc = {
+      \ 'description': 'set fenc=...',
+      \ }
+let g:unite_source_menu_menus.fenc.candidates = {
+      \ 'euc-jp': 'set fenc=euc-jp',
+      \ 'utf-8' : 'set fenc=utf-8',
+      \ }
+function g:unite_source_menu_menus.fenc.map(key, value)
+  return {
+        \ 'word': a:key, 'kind': 'command',
+        \ 'action__command': a:value,
+        \ }
+endfunction
+nnoremap <silent> ,ufenc :<C-u>Unite menu:fenc<CR>
+"" encode変更
+let g:unite_source_menu_menus.ff = {
+      \ 'description': 'set ff=...',
+      \ }
+let g:unite_source_menu_menus.ff.candidates = {
+      \ 'unix': 'set ff=unix',
+      \ 'mac' : 'set ff=mac',
+      \ 'dos' : 'set ff=dos',
+      \ }
+function g:unite_source_menu_menus.ff.map(key, value)
+  return {
+        \ 'word': a:key, 'kind': 'command',
+        \ 'action__command': a:value,
+        \ }
+endfunction
+nnoremap <silent> ,uff :<C-u>Unite menu:ff<CR>
 "}}}
 
 

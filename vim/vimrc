@@ -49,7 +49,7 @@ NeoBundle 'tomtom/tcomment_vim'         " コメントのトグル
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'errormarker.vim'
 NeoBundle 'mattn/gist-vim'
-NeoBundle 'Align'                       " テキストを表みたいな感じに整形
+NeoBundle 'h1mesuke/vim-alignta'        " テキストを表みたいな感じに整形
 NeoBundle 'taku-o/vim-toggle'           " true,falseのトグル
 NeoBundle 'dannyob/quickfixstatus'      " カーソル行のquickfixをコマンド行に表示
 NeoBundle 'mattn/webapi-vim'
@@ -357,11 +357,6 @@ let g:vimshell_split_command = 'split | resize 20'
 "" Rファイルを開いてる時，VimShellInteractiveでR起動
 call vimshell#set_dictionary_helper(
       \ g:vimshell_interactive_interpreter_commands, 'r', 'R')
-
-
-" Align(テキスト整形)
-let g:Align_xstrlen = 3     " for japanese string
-let g:DrChipTopLvlMenu = '' " remove 'DrChip' menu
 
 
 "errormarker.vimの設定

@@ -32,7 +32,7 @@ map <S-Left>  :tabmove! -1<CR>
 map <S-Right> :tabmove! +1<CR>
 map b :emenu Tools.Clearly<CR>
 "hintcharをアルファベットに
-set hintchars=hjklasdfgyuiopqwertnmzxcvb
+set hintchars=zhjklasdfgyuiopqwertnmxcvb
 
 "+----------------------------------------------------------------------------------------+
 " plugin_loader.js

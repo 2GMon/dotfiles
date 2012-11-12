@@ -74,6 +74,7 @@ NeoBundle 'osyo-manga/vim-watchdogs', {'depends' :
       \ }
 NeoBundle 'thinca/vim-partedit'         " バッファ内の一部を別バッファで編集(例:html内のjavascript)
 NeoBundle 'matchit.zip'
+NeoBundle 'kana/vim-arpeggio'
 "" Colorscheme
 NeoBundle 'molokai'
 NeoBundle 'pyte'
@@ -374,6 +375,13 @@ nmap <leader>gV :Gitv! --all<CR>
 let g:gitq_config = {
       \ 'add/p': { 'runner' : 'shell', },
       \}
+
+
+" vim-arpeggioの設定
+call arpeggio#load()
+Arpeggio inoremap jk  <Esc>
+Arpeggio nnoremap fj  <C-d>
+Arpeggio nnoremap fk  <C-u>
 
 
 " TXT

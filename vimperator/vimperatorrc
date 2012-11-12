@@ -41,9 +41,10 @@ let g:plugin_loader_roots = "~/.vimperator/vimpr/ ~/.vimperator/caisui/plugin/"
 js <<EOF
 liberator.globalVariables.plugin_loader_plugins = <>
     _libly
+    appendAnchor
+    caret-hint
     commandBookmarklet
     copy
-    hints-ext
     stella
     twittperator
     zip-de-download
@@ -67,11 +68,10 @@ liberator.globalVariables.plugin_loader_plugins = <>
 EOF
 
 "+----------------------------------------------------------------------------------------+
-" hints-ext.js
+" appendAnchor.js
 "+----------------------------------------------------------------------------------------+
-let use_hintchars_ex=2
-let use_hints_ext_hinttags=1
-let use_hints_ext_extendedhinttags=1
+g:auto_append_anchor = "true"
+g:auto_append_anchor_once = "true"
 
 "+----------------------------------------------------------------------------------------+
 " stella.js(ニコ動、YouTube、Viemoでキーボード操作)

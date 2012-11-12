@@ -3,6 +3,7 @@
 
 source! /home/t2gmon/.vimperatorrc.local
 
+set! extensions.checkCompatibility.16.0=false
 set gui=noaddons,nobookmarks,nomenu,nonavigation,tabs
 
 set newtab="all"

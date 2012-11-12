@@ -71,7 +71,7 @@ EOF
 "+----------------------------------------------------------------------------------------+
 " hints-ext.js
 "+----------------------------------------------------------------------------------------+
-let use_hintchars_ex=1
+let use_hintchars_ex=2
 let use_hints_ext_hinttags=1
 let use_hints_ext_extendedhinttags=1
 

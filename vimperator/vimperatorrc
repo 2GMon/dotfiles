@@ -41,7 +41,6 @@ let g:plugin_loader_roots = "~/.vimperator/vimpr/ ~/.vimperator/caisui/plugin/"
 js <<EOF
 liberator.globalVariables.plugin_loader_plugins = <>
     _libly
-    pluginManager
     commandBookmarklet
     copy
     hints-ext
@@ -60,7 +59,6 @@ liberator.globalVariables.plugin_loader_plugins = <>
     hints-for-embedded
     nextlink
     open-frame
-    opener
     refe
     removetabs
     reporter

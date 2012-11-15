@@ -186,6 +186,7 @@ function! s:OpenMlterm()
   silent execute '!mlterm &'
 endfunction
 nnoremap <silent> ,ss :<C-u>call <SID>OpenMlterm()<CR>
+nnoremap <silent> <C-c> :<C-u>lcd %:p:h<CR>
 "}}}
 
 

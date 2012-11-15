@@ -85,6 +85,7 @@ NeoBundleLazy 'Rip-Rip/clang_complete'
 NeoBundleLazy 'osyo-manga/neocomplcache-clang_complete'
 "" Ruby
 NeoBundleLazy 'tpope/vim-rails'
+NeoBundleLazy 'rhysd/neco-ruby-keyword-args'
 "" Dart snippets
 NeoBundleLazy "git://github.com/osyo-manga/neocomplcache-snippets-complete-dart.git"
 "" Dart syntax
@@ -483,6 +484,8 @@ augroup ruby-setting
   autocmd!
   autocmd FileType ruby setlocal shiftwidth=2
   autocmd FileType ruby setlocal tabstop=2
+  autocmd FileType ruby NeoBundleSource neco-ruby-keyword-args
+  autocmd FileType ruby NeoBundleSource vim-rails
 augroup END
 " }}}
 

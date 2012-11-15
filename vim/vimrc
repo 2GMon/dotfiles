@@ -470,6 +470,8 @@ augroup END
 augroup cpp-setting
   autocmd!
   autocmd FileType cpp let b:match_words = &matchpairs . b:match_words . ",<:>"
+  autocmd FileType cpp NeoBundleSource clang_complete
+  autocmd FileType cpp NeoBundleSource neocomplcache-clang_complete
 augroup END
 let g:clang_complete_auto=1
 let g:clang_use_library=0
@@ -494,6 +496,8 @@ augroup END
 augroup dart-setting
   autocmd!
   autocmd BufNewFile,BufRead *.dart setfiletype dart " .dartのファイルを開いた時にファイルタイプ設定
+  autocmd FileType *.dart NeoBundleSource neocomplcache-snippets-complete-dart.git
+  autocmd FileType *.dart NeoBundleSource Dart
 augroup END
 let s:dart_cmd = "$DART_SDK/bin/dart" " dartのパス
 let g:quickrun_config['dart'] = {'command' : s:dart_cmd} " quickrunにdartのパスを設定
@@ -507,6 +511,8 @@ augroup haskell-setting
   autocmd FileType haskell noremap <buffer><silent> ,gmt :GhcModType<CR>
   autocmd FileType haskell noremap <buffer><silent> ,gmtc :GhcModTypeClear<CR>
   autocmd FileType haskell noremap <buffer><silent> ,gmc :GhcModCheck<CR>
+  autocmd FileType haskell NeoBundleSource neco-ghc
+  autocmd FileType haskell NeoBundleSource ghcmod-vim
 augroup END
 " }}}
 

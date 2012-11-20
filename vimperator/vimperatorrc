@@ -32,7 +32,7 @@ map <S-Left>  :tabmove! -1<CR>
 map <S-Right> :tabmove! +1<CR>
 map b :emenu Tools.Clearly<CR>
 "hintcharをアルファベットに
-set hintchars=zhjklasdfgyuiopqwertnmxcvb
+set hintchars=hjklasdfgyuiopqwertnmxcvbz
 
 "+----------------------------------------------------------------------------------------+
 " plugin_loader.js
@@ -42,7 +42,6 @@ js <<EOF
 liberator.globalVariables.plugin_loader_plugins = <>
     _libly
     appendAnchor
-    caret-hint
     commandBookmarklet
     copy
     stella
@@ -58,6 +57,7 @@ liberator.globalVariables.plugin_loader_plugins = <>
     command_menu
     fetchyoutube
     hints-for-embedded
+    hints-ext
     nextlink
     open-frame
     refe
@@ -70,8 +70,28 @@ EOF
 "+----------------------------------------------------------------------------------------+
 " appendAnchor.js
 "+----------------------------------------------------------------------------------------+
-g:auto_append_anchor = "true"
 g:auto_append_anchor_once = "true"
+
+"+----------------------------------------------------------------------------------------+
+" hints-ext.js
+"+----------------------------------------------------------------------------------------+
+let use_hintchars_ex=1
+" クエリーセレクタ版に置き換え
+let use_hints_ext_hinttags=1
+let use_hints_ext_extendedhinttags=1
+" キータイプ数を揃える
+let use_hintchars_ex=2
+let use_hints_ext_caret="C"
+let use_hints_ext_visual="V"
+" kで画像を非表示にするヒントを表示
+js <<EOM
+hints.addMode("k", "Kill image",
+    function (elem) elem.style.display="none",
+    function () "//img");
+EOM
+" ヒント表示した時に<C-l>で重ならないように配置しなおす
+autocmd VimperatorEnter ".*" :js hints.addSimpleMap("<C-l>", function() this.relocation())
+
 
 "+----------------------------------------------------------------------------------------+
 " stella.js(ニコ動、YouTube、Viemoでキーボード操作)

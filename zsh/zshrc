@@ -7,7 +7,7 @@ compinit
 
 alias vi='vim'
 alias ls='ls --color=auto -CFG'
-source ~/.alias
+[ -f ~/.alias ] && source ~/.alias
 
 export EDITOR=vim
 #iBus Configuration
@@ -76,9 +76,9 @@ zstyle ':completion:*' list-colors ''
 [ -f ~/.zshrc.mine ] && source ~/.zshrc.mine
 
 #Z
-_Z_CMD=j
-source ~/applications/z/z.sh
-precmd() {
+[ -f ~/applications/z/z.sh ] && _Z_CMD=j
+[ -f ~/applications/z/z.sh ] && source ~/applications/z/z.sh
+[ -f ~/applications/z/z.sh ] && precmd() {
     _z --add "$(pwd -P)"
 }
 

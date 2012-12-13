@@ -525,3 +525,11 @@ augroup tex-mapping
   autocmd FileType tex nnoremap <buffer><C-o> :Unite -no-quite -no-start-insert -winheight=10 outline<CR>
 augroup END
 " }}}
+
+
+" snippet {{{
+augroup snippets-setting
+  autocmd!
+  autocmd FileType snippet setlocal noexpandtab
+augroup END
+" }}}

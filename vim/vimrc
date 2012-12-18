@@ -165,6 +165,7 @@ filetype on
 filetype indent on
 filetype plugin on
 syntax on                       " syntaxカラー有効
+syntax sync fromstart
 set background=dark
 colorscheme desert
 set nrformats=alpha,octal,hex     " Ctrl+A, Ctrl+Xの加算減算で認識する基数

@@ -99,3 +99,5 @@ sudo() {
       ;;
   esac
 }
+
+[ -f ~/.zshrc_local ] && source ~/.zshrc_local

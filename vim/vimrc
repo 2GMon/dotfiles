@@ -78,6 +78,7 @@ NeoBundle 'matchit.zip'
 NeoBundle 'kana/vim-arpeggio'
 NeoBundle 'vimtaku/hl_matchit.vim.git'
 NeoBundle 'itchyny/thumbnail.vim'
+NeoBundle "osyo-manga/vim-anzu"           " 現在の検索位置を表示
 "" Colorscheme
 NeoBundle 'molokai'
 NeoBundle 'pyte'
@@ -160,7 +161,6 @@ set number          " 行番号表示
 set showtabline=2   " タブページ常に表示
 set noswapfile      " スワップファイル作らない
 set nobackup        " バックアップファイル作らない
-set nowrapscan      " ファイルの終わりを超えて検索しない
 set showmatch       " 対応する括弧の表示
 " デフォルトインデント
 set autoindent smartindent
@@ -205,6 +205,11 @@ function! s:OpenMlterm()
 endfunction
 nnoremap <silent> ,ss :<C-u>call <SID>OpenMlterm()<CR>
 nnoremap <silent> <C-c> :<C-u>lcd %:p:h<CR>
+" 検索位置表示
+nmap n <Plug>(anzu-n-with-echo)
+nmap N <Plug>(anzu-N-with-echo)
+nmap * <Plug>(anzu-star-with-echo)
+nmap # <Plug>(anzu-sharp-with-echo)
 "}}}
 
 

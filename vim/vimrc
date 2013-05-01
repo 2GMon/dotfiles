@@ -309,6 +309,8 @@ let g:unite_source_menu_menus = {
       \ },
       \}
 nnoremap <silent> ,uef :<C-u>Unite menu:edit_frequently<CR>
+"" Rails
+nnoremap <silent> ,uR :<C-u>Unite rails/
 "}}}
 
 

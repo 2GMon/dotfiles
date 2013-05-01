@@ -523,6 +523,8 @@ augroup ruby-setting
   autocmd!
   autocmd FileType ruby setlocal shiftwidth=2
   autocmd FileType ruby setlocal tabstop=2
+  autocmd FileType eruby setlocal shiftwidth=2
+  autocmd FileType eruby setlocal tabstop=2
 augroup END
 " }}}
 

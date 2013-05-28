@@ -31,6 +31,7 @@ NeoBundle 'osyo-manga/unite-quickfix'
 NeoBundle 'ujihisa/unite-rake'
 NeoBundle 'basyura/unite-rails'
 NeoBundle 'Shougo/unite-build'
+NeoBundle 'hewes/unite-gtags'
 "" ネタのUnite Source
 NeoBundle 'mattn/unite-nyancat'
 NeoBundle 'osyo-manga/unite-shimapan'
@@ -316,6 +317,8 @@ let g:unite_source_menu_menus = {
 nnoremap <silent> ,uef :<C-u>Unite menu:edit_frequently<CR>
 "" Rails
 nnoremap <silent> ,uR :<C-u>Unite rails/
+"" Gtags
+nnoremap <silent> ,ugg :<C-u>Unite gtags/context<CR>
 "}}}
 
 

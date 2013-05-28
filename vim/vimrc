@@ -80,6 +80,7 @@ NeoBundle 'kana/vim-arpeggio'
 NeoBundle 'vimtaku/hl_matchit.vim.git'
 NeoBundle 'itchyny/thumbnail.vim'
 NeoBundle "osyo-manga/vim-anzu"           " 現在の検索位置を表示
+NeoBundle "spolu/dwm.vim"                 " タイル型
 "" Colorscheme
 NeoBundle 'molokai'
 NeoBundle 'pyte'
@@ -425,15 +426,6 @@ let g:watchdogs_check_BufWritePost_enables = {
 
 " parteditの設定 {{{
 let g:partedit#opener = 'split'
-" }}}
-
-
-" Gtagsの設定 {{{
-map <C-g> :Gtags 
-map <C-i> :Gtags -f %<CR>
-map <C-j> :GtagsCursor<CR>
-map <C-n> :cn<CR>
-map <C-p> :cp<CR>
 " }}}
 
 

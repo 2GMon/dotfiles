@@ -462,6 +462,12 @@ let errormarker_warninggroup = "Todo"
 " }}}
 
 
+" fugitiveの設定 {{{
+noremap <silent> ,gs :<C-u>Gstatus<CR>
+noremap ,gc :<C-u>Gcommit
+" }}}
+
+
 " Gitvの設定 {{{
 nmap <leader>gv :Gitv --all<CR>
 nmap <leader>gV :Gitv! --all<CR>

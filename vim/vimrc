@@ -320,6 +320,20 @@ nnoremap <silent> ,uef :<C-u>Unite menu:edit_frequently<CR>
 nnoremap <silent> ,uR :<C-u>Unite rails/
 "" Gtags
 nnoremap <silent> ,ugg :<C-u>Unite gtags/context<CR>
+"" DWMで開くアクション追加
+let s:action = {
+      \ 'description' : 'new dwm',
+      \ 'is_selectable' : 1,
+      \ }
+function! s:action.func(candidates)"{{{
+  for l:candidate in a:candidates
+    call unite#util#command_with_restore_cursor('rightbelow split')
+    call unite#take_action('open', candidate)
+    call DWM_Focus()
+  endfor
+endfunction"}}}
+call unite#custom_action('openable', 'dwm_new', s:action)
+unlet s:action
 "}}}
 
 

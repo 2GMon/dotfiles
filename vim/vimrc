@@ -317,7 +317,7 @@ let g:unite_source_menu_menus = {
       \}
 nnoremap <silent> ,uef :<C-u>Unite menu:edit_frequently<CR>
 "" Rails
-nnoremap <silent> ,uR :<C-u>Unite rails/
+nnoremap ,uR :<C-u>Unite rails/
 "" Gtags
 nnoremap <silent> ,ugg :<C-u>Unite gtags/context<CR>
 "" DWMで開くアクション追加

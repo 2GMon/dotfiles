@@ -41,7 +41,6 @@ NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/vimfiler'
 NeoBundle 'Shougo/vinarise'
 NeoBundle 'thinca/vim-ref'
-NeoBundle 'mattn/hahhah-vim'            " ステータスラインにハァハァ
 NeoBundle 'tpope/vim-abolish'           " キャメルケース,スネークケース等の変換
 NeoBundle 'kana/vim-textobj-user'       " textobjを作るための物
 NeoBundle 'kana/vim-textobj-fold'       " 折りたたまれた部分をtextobjに
@@ -193,8 +192,7 @@ set undolevels=10000              " Undoの回数制限
 set statusline&
 set statusline=%<%F\ %m%r%h%w%y%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}[POS=%l,%v,%p%%]
 set statusline+=%{fugitive#statusline()}
-set statusline+=%{g:NyanModoki()}
-set statusline+=%=%{g:HahHah()}
+set statusline+=%=%{g:NyanModoki()}
 set laststatus=2
 let g:nyan_modoki_select_cat_face_number = 4
 set showcmd               " 入力中のコマンド表示

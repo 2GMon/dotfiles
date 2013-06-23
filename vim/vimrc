@@ -243,15 +243,15 @@ au FileType unite imap     <silent> <buffer> <C-w>      <Plug>(unite_delete_back
 "" バッファ一覧
 noremap <silent> ,ub :Unite buffer<CR>
 "" ファイル一覧
-noremap <silent> ,uf :UniteWithBufferDir -buffer-name=file file<CR>
+noremap <silent> ,uf :UniteWithBufferDir -default-action=tabopen -buffer-name=file file<CR>
 "" 最近使ったファイルの一覧
 noremap <silent> ,ur :Unite -buffer-name=register register<CR>
 "" 最近使ったファイルの一覧
 noremap <silent> ,um :Unite file_mru<CR>
 "" 常用
-noremap <silent> ,uu :Unite buffer file_mru<CR>
+noremap <silent> ,uu :Unite -default-action=tabopen buffer file_mru<CR>
 "" 全部
-noremap <silent> ,ua :UniteWithBufferDir -buffer-name=files buffer file_mru<CR>
+noremap <silent> ,ua :UniteWithBufferDir -default-action=tabopen -buffer-name=files buffer file_mru<CR>
 "" Colorscheme
 noremap <silent> ,ucs :<C-u>Unite -no-quit -auto-preview colorscheme<CR>
 "" history/yank
@@ -262,9 +262,9 @@ noremap <silent> ,ut :<C-u>Unite tab:no-current<CR>
 noremap <silent> ,ul :<C-u>Unite line<CR>
 noremap <silent> ,uL :<C-u>Unite line -no-quit<CR>
 "" Outline
-noremap <silent> ,uo :<C-u>Unite -no-start-insert -winheight=20 outline<CR>
+noremap <silent> ,uo :<C-u>Unite -winheight=20 outline<CR>
 "" help
-noremap <silent> ,uhl :<C-u>Unite -winheight=40 help<CR>
+noremap <silent> ,uhl :<C-u>Unite -default-action=tabopen -winheight=40 help<CR>
 "" unite-tag
 noremap <silent> ,ug] :<C-u>execute 'Unite tag:' . expand('<cword>')<CR>
 "" listing Project file
@@ -501,6 +501,18 @@ noremap ,gc :<C-u>Gcommit
 " Gitvの設定 {{{
 nmap <leader>gv :Gitv --all<CR>
 nmap <leader>gV :Gitv! --all<CR>
+autocmd FileType gitv call s:my_gitv_settings()
+function! s:gitv_get_current_hash()
+  return matchstr(getline('.'), '\[\zs.\{7\}\ze\]$')
+endfunction
+function! s:my_gitv_settings()
+  setlocal iskeyword+=/,-,.
+"  nnoremap <silent><buffer> C :<C-u>Git checkout <C-r>=GitvGetCurrentHash()<CR>
+"  nnoremap <buffer> <Space>rb :<C-u>Git rebase <C-r>=GitvGetCurrentHash()<CR><Space>
+"  nnoremap <buffer> <Space>R :<C-u>Git revert <C-r>=GitvGetCurrentHash()<CR><CR>
+"  nnoremap <buffer> <Space>h :<C-u>Git cherry-pick <C-r>=GitvGetCurrentHash()<CR><CR>
+"  nnoremap <buffer> <Space>rh :<C-u>Git reset --hard <C-r>=GitvGetCurrentHash()<CR>
+endfunction
 " }}}
 
 " Gitqの設定 {{{

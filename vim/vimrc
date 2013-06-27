@@ -243,7 +243,7 @@ au FileType unite imap     <silent> <buffer> <C-w>      <Plug>(unite_delete_back
 "" バッファ一覧
 noremap <silent> ,ub :Unite buffer<CR>
 "" ファイル一覧
-noremap <silent> ,uf :UniteWithBufferDir  -buffer-name=file file<CR>
+noremap <silent> ,uf :UniteWithBufferDir -default-action=tabopen -buffer-name=file file<CR>
 "" 最近使ったファイルの一覧
 noremap <silent> ,ur :Unite -buffer-name=register register<CR>
 "" 最近使ったファイルの一覧

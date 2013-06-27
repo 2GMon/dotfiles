@@ -333,9 +333,9 @@ let g:unite_source_menu_menus = {
       \}
 nnoremap <silent> ,uef :<C-u>Unite menu:edit_frequently<CR>
 "" Rails
-nnoremap ,uR :<C-u>Unite -default-action=tabopen rails/
+nnoremap ,uR :<C-u>Unite rails/
 "" Gtags
-nnoremap <silent> ,ugg :<C-u>Unite -default-action=tabopen gtags/context<CR>
+nnoremap <silent> ,ugg :<C-u>Unite gtags/context<CR>
 "" DWMで開くアクション追加
 let s:action = {
       \ 'description' : 'new dwm',

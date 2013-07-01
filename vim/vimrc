@@ -341,10 +341,10 @@ nnoremap <silent> ,ugg :<C-u>Unite gtags/context<CR>
 
 " submodeの設定{{{
 "" tab間移動
-call submode#enter_with('changetab', 'n', '', 'gt', 'gt')
-call submode#enter_with('changetab', 'n', '', 'gT', 'gT')
-call submode#map('changetab', 'n', '', 't', 'gt')
-call submode#map('changetab', 'n', '', 'T', 'gT')
+call submode#enter_with('changetab', 'n', '', '<C-j>', 'gt')
+call submode#enter_with('changetab', 'n', '', '<C-k>', 'gT')
+call submode#map('changetab', 'n', '', 'j', 'gt')
+call submode#map('changetab', 'n', '', 'k', 'gT')
 "" tab移動
 function! g:MoveTab(n)
   let new_position = tabpagenr() - 1 + a:n
@@ -358,10 +358,10 @@ function! g:MoveTab(n)
 
   execute 'tabmove ' . new_position
 endfunction
-call submode#enter_with('movetab', 'n', '', '<C-j>', ':<C-u>call g:MoveTab(1)<CR>')
-call submode#enter_with('movetab', 'n', '', '<C-k>', ':<C-u>call g:MoveTab(-1)<CR>')
-call submode#map('movetab', 'n', '', 'j', ':<C-u>call g:MoveTab(1)<CR>')
-call submode#map('movetab', 'n', '', 'k', ':<C-u>call g:MoveTab(-1)<CR>')
+call submode#enter_with('movetab', 'n', '', '<C-m>', ':<C-u>call g:MoveTab(1)<CR>')
+call submode#enter_with('movetab', 'n', '', '<C-n>', ':<C-u>call g:MoveTab(-1)<CR>')
+call submode#map('movetab', 'n', '', 'm', ':<C-u>call g:MoveTab(1)<CR>')
+call submode#map('movetab', 'n', '', 'n', ':<C-u>call g:MoveTab(-1)<CR>')
 "}}}
 
 

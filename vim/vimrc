@@ -149,6 +149,16 @@ call unite#define_source(s:unite_source)
 "}}}
 
 
+" Utilities{{{
+function! s:SID()
+  return matchstr(expand('<sfile>'), '<SNR>\zs\d\+\ze_SID$')
+endfunction
+function! s:SIDP()
+  return '<SNR>' . s:SID() . '_'
+endfunction
+"}}}
+
+
 let g:quickrun_config = {}
 
 " Vimの設定{{{

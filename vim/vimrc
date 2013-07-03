@@ -351,10 +351,10 @@ nnoremap <silent> ,ugg :<C-u>Unite gtags/context<CR>
 
 " submodeの設定{{{
 "" tab間移動
-call submode#enter_with('changetab', 'n', '', '<C-j>', 'gt')
-call submode#enter_with('changetab', 'n', '', '<C-k>', 'gT')
-call submode#map('changetab', 'n', '', 'j', 'gt')
-call submode#map('changetab', 'n', '', 'k', 'gT')
+call submode#enter_with('changetab', 'n', '', 'gt', 'gt')
+call submode#enter_with('changetab', 'n', '', 'gT', 'gT')
+call submode#map('changetab', 'n', '', 't', 'gt')
+call submode#map('changetab', 'n', '', 'T', 'gT')
 "" tab移動
 function! s:movetab(n)
   let new_position = tabpagenr() - 1 + a:n
@@ -369,10 +369,10 @@ function! s:movetab(n)
   execute 'tabmove ' . new_position
 endfunction
 let s:movetab = ':<C-u>call ' . s:SIDP() . 'movetab(%d)<CR>'
-call submode#enter_with('movetab', 'n', '', '<C-o>', printf(s:movetab, 1))
-call submode#enter_with('movetab', 'n', '', '<C-i>', printf(s:movetab, -1))
-call submode#map('movetab', 'n', '', 'o', printf(s:movetab, 1))
-call submode#map('movetab', 'n', '', 'i', printf(s:movetab, -1))
+call submode#enter_with('movetab', 'n', '', 'gr', printf(s:movetab, 1))
+call submode#enter_with('movetab', 'n', '', 'gR', printf(s:movetab, -1))
+call submode#map('movetab', 'n', '', 'r', printf(s:movetab, 1))
+call submode#map('movetab', 'n', '', 'R', printf(s:movetab, -1))
 unlet s:movetab
 "}}}
 

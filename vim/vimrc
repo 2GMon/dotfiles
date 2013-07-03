@@ -32,6 +32,7 @@ NeoBundle 'ujihisa/unite-rake'
 NeoBundle 'basyura/unite-rails'
 NeoBundle 'Shougo/unite-build'
 NeoBundle 'hewes/unite-gtags'
+NeoBundle 'sgur/unite-git_grep'
 "" ネタのUnite Source
 NeoBundle 'mattn/unite-nyancat'
 NeoBundle 'osyo-manga/unite-shimapan'
@@ -346,6 +347,8 @@ nnoremap <silent> ,uef :<C-u>Unite menu:edit_frequently<CR>
 nnoremap ,uR :<C-u>Unite rails/
 "" Gtags
 nnoremap <silent> ,ugt :<C-u>Unite gtags/context<CR>
+"" Git grep
+nnoremap <silent> ,uggr :<C-u>Unite -no-quit vcs_grep/git<CR>
 "}}}
 
 

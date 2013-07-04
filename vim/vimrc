@@ -33,6 +33,7 @@ NeoBundle 'basyura/unite-rails'
 NeoBundle 'Shougo/unite-build'
 NeoBundle 'hewes/unite-gtags'
 NeoBundle 'sgur/unite-git_grep'
+NeoBundle 'rbtnn/clever-f.vim'
 "" ネタのUnite Source
 NeoBundle 'mattn/unite-nyancat'
 NeoBundle 'osyo-manga/unite-shimapan'

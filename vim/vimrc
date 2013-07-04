@@ -337,6 +337,7 @@ nnoremap <silent> ,Ugr :<C-u>execute 'Unite grep -no-quit' . g:bufname_opt("find
 
 
 " submodeの設定{{{
+let g:submode_keep_leaving_key = 1
 "" tab間移動
 call submode#enter_with('changetab', 'n', '', 'gt', 'gt')
 call submode#enter_with('changetab', 'n', '', 'gT', 'gT')

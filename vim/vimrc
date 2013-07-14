@@ -82,6 +82,9 @@ NeoBundle 'vimtaku/hl_matchit.vim.git'
 NeoBundle 'itchyny/thumbnail.vim'
 NeoBundle "osyo-manga/vim-anzu"           " 現在の検索位置を表示
 NeoBundle 'kana/vim-submode'
+NeoBundle 'osyo-manga/vim-precious', {'depends' :
+      \ ['Shougo/context_filetype.vim']
+      \ }
 "" Colorscheme
 NeoBundle 'molokai'
 NeoBundle 'pyte'

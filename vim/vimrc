@@ -122,12 +122,9 @@ NeoBundleLazy 'eagletmt/ghcmod-vim', {
       \ }
 "" mikutter_mode
 if isdirectory(expand("~/workspace/vim/plugins/mikutter_mode.vim"))
-NeoBundle 'mikutter_mode.vim', {
-      \ "base": "~/workspace/vim/plugins",
-      \ "type": "nosync"
-      \ }
+    NeoBundle '~/workspace/vim/plugins', { "type": "nosync" }
 else
-NeoBundle '2GMon/mikutter_mode.vim'
+    NeoBundle '2GMon/mikutter_mode.vim'
 endif
 
 filetype plugin indent on     " required!

@@ -204,3 +204,9 @@ nnoremap -urls=www\\.slideshare\\.net h :slideshare prev<CR>
 "+----------------------------------------------------------------------------------------+
 noremap <C-S-p> :removetabsleft<CR>
 noremap <C-S-n> :removetabsright<CR>
+
+"+----------------------------------------------------------------------------------------+
+" TreeStyleTab
+"+----------------------------------------------------------------------------------------+
+nnoremap <C-c> :javascript gBrowser.treeStyleTab.collapseExpandSubtree(TreeStyleTabService.getParentTab(gBrowser.selectedTab), true);<CR>
+nnoremap <C-x> :javascript gBrowser.treeStyleTab.collapseExpandSubtree(TreeStyleTabService.getParentTab(gBrowser.selectedTab), false);<CR>

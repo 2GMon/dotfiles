@@ -1,8 +1,6 @@
 " vim: set ft=vimperator:
 "3.0 (created: 2010/04/07 18:56:53)
 
-source! /home/t2gmon/.vimperatorrc.local
-
 set! extensions.checkCompatibility.20.0=false
 set gui=noaddons,nobookmarks,nomenu,nonavigation,tabs
 
@@ -210,3 +208,5 @@ noremap <C-S-n> :removetabsright<CR>
 "+----------------------------------------------------------------------------------------+
 nnoremap <C-c> :javascript gBrowser.treeStyleTab.collapseExpandSubtree(TreeStyleTabService.getParentTab(gBrowser.selectedTab), true);<CR>
 nnoremap <C-x> :javascript gBrowser.treeStyleTab.collapseExpandSubtree(TreeStyleTabService.getParentTab(gBrowser.selectedTab), false);<CR>
+
+source! /home/t2gmon/.vimperatorrc.local

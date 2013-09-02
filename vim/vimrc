@@ -248,42 +248,39 @@ let g:unite_source_menu_menus = {}
 let g:unite_enable_start_insert=1 "入力モードで開始する
 let g:unite_source_file_mru_limit=500 " 最近使ったファイルの最大値
 let g:unite_source_history_yank_enable=1 " history/yankの有効化
-function! g:bufname_opt(prefix)
-  return printf(" -buffer-name=%s_%s", a:prefix, bufname("%"))
-endfunction
 call unite#custom_filters('file', [ 'matcher_default', 'matcher_hide_hidden_files', 'converter_relative_abbr' ])
 "" ESC2回押すと終了する
 au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
 au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>q<CR>
 au FileType unite imap     <silent> <buffer> <C-w>      <Plug>(unite_delete_backward_path)
 "" バッファ一覧
-noremap <silent> ,ub :Unite buffer<CR>
+noremap <silent> ,ub :Unite -create buffer<CR>
 "" ファイル一覧
-noremap <silent> ,uf :UniteWithBufferDir -buffer-name=file file<CR>
+noremap <silent> ,uf :UniteWithBufferDir -create file<CR>
 "" 最近使ったファイルの一覧
-noremap <silent> ,ur :Unite -buffer-name=register register<CR>
+noremap <silent> ,ur :Unite -create register<CR>
 "" 最近使ったファイルの一覧
-noremap <silent> ,um :Unite file_mru<CR>
+noremap <silent> ,um :Unite -create file_mru<CR>
 "" 常用
-noremap <silent> ,uu :Unite -buffer-name=buffer_and_file_mru buffer file_mru<CR>
+noremap <silent> ,uu :Unite -create buffer file_mru<CR>
 "" 全部
-noremap <silent> ,ua :UniteWithBufferDir -buffer-name=files buffer file_mru<CR>
+noremap <silent> ,ua :UniteWithBufferDir -create buffer file_mru<CR>
 "" Colorscheme
-noremap <silent> ,ucs :<C-u>Unite -no-quit -auto-preview colorscheme<CR>
+noremap <silent> ,ucs :<C-u>Unite -create -no-quit -auto-preview colorscheme<CR>
 "" history/yank
-noremap <silent> ,uhy :<C-u>Unite history/yank<CR>
+noremap <silent> ,uhy :<C-u>Unite -create history/yank<CR>
 "" Tab一覧
-noremap <silent> ,ut :<C-u>Unite tab:no-current<CR>
+noremap <silent> ,ut :<C-u>Unite -create tab:no-current<CR>
 "" Line
-"noremap <silent> ,ul :<C-u>execute 'Unite line -buffer-name=line_' . printf("%s", bufname("%"))<CR>
-noremap <silent> ,ul :<C-u>execute 'Unite line' . g:bufname_opt("line")<CR>
-noremap <silent> ,uL :<C-u>execute 'Unite line -no-quit' . g:bufname_opt("line")<CR>
+noremap <silent> ,ul :<C-u>Unite -create line<CR>
+noremap <silent> ,Ul :<C-u>Unite -create -no-quit line<CR>
 "" Outline
-noremap <silent> ,uo :<C-u>execute 'Unite outline -winheight=20' . g:bufname_opt("outline")<CR>
+noremap <silent> ,uo :<C-u>Unite -create -winheight=20 outline<CR>
+noremap <silent> ,Uo :<C-u>Unite -create -winheight=20 -no-quit outline<CR>
 "" help
-noremap <silent> ,uhl :<C-u>Unite -winheight=40 help<CR>
+noremap <silent> ,uhl :<C-u>Unite -create -winheight=40 help<CR>
 "" unite-tag
-noremap <silent> ,ug] :<C-u>execute 'Unite tag:' . expand('<cword>') . g:bufname_opt("tag")<CR>
+noremap <silent> ,ug] :<C-u>execute 'Unite -create tag:' . expand('<cword>')<CR>
 "" listing Project file
 nnoremap <silent> ,up :<C-u>call <SID>unite_project('-start-insert')<CR>
 function! s:unite_project(...)
@@ -305,7 +302,7 @@ function g:unite_source_menu_menus.enc.map(key, value)
         \ 'action__command': a:value,
         \ }
 endfunction
-nnoremap <silent> ,uenc :<C-u>Unite menu:enc<CR>
+nnoremap <silent> ,uenc :<C-u>Unite -create menu:enc<CR>
 "" fileencode変更
 let g:unite_source_menu_menus.fenc = {
       \ 'description': 'set fenc=...',
@@ -320,21 +317,23 @@ function g:unite_source_menu_menus.fenc.map(key, value)
         \ 'action__command': a:value,
         \ }
 endfunction
-nnoremap <silent> ,ufenc :<C-u>Unite menu:fenc<CR>
+nnoremap <silent> ,ufenc :<C-u>Unite -create menu:fenc<CR>
 "" Rails
-nnoremap ,uR :<C-u>Unite rails/
+nnoremap ,uR :<C-u>Unite -create rails/
 "" Gtags
-nnoremap <silent> ,ugt :<C-u>execute 'Unite gtags/context' . g:bufname_opt("gtags")<CR>
-nnoremap <silent> ,Ugt :<C-u>execute 'Unite gtags/context -no-quit' . g:bufname_opt("gtags")<CR>
+nnoremap <silent> ,ugt :Unite -create gtags/context<CR>
+nnoremap <silent> ,Ugt :Unite -create -no-quit gtags/context<CR>
 "" Git grep
-nnoremap <silent> ,uggr :<C-u>execute 'Unite vcs_grep/git' . g:bufname_opt("git_grep")<CR>
-nnoremap <silent> ,uggr :<C-u>execute 'Unite vcs_grep/git -no-quit' . g:bufname_opt("git_grep")<CR>
+nnoremap <silent> ,uggr :Unite -create vcs_grep/git<CR>
+nnoremap <silent> ,Uggr :Unite -create -no-quit vcs_grep/git<CR>
 "" find
-nnoremap <silent> ,und :<C-u>execute 'Unite find' . g:bufname_opt("find")<CR>
-nnoremap <silent> ,Und :<C-u>execute 'Unite find -no-quit' . g:bufname_opt("find")<CR>
+nnoremap <silent> ,und :Unite -create find<CR>
+nnoremap <silent> ,Und :Unite -create -no-quit find<CR>
 "" grep
-nnoremap <silent> ,ugr :<C-u>execute 'Unite grep' . g:bufname_opt("find")<CR>
-nnoremap <silent> ,Ugr :<C-u>execute 'Unite grep -no-quit' . g:bufname_opt("find")<CR>
+nnoremap <silent> ,ugr :Unite -create grep<CR>
+nnoremap <silent> ,Ugr :Unite -create -no-quit grep<CR>
+nnoremap ,UGr :Unite -create grep:
+nnoremap ,UGr :Unite -create -no-quit grep:
 "}}}
 
 

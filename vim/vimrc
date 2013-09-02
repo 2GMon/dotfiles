@@ -120,6 +120,10 @@ NeoBundleLazy 'ujihisa/neco-ghc', {
 NeoBundleLazy 'eagletmt/ghcmod-vim', {
       \ 'autoload' : {'filetype' : ['haskell']}
       \ }
+"" pronamachang
+NeoBundle 'osyo-manga/vim-pronamachang', {
+      \   'depends' : [ 'osyo-manga/vim-sound', 'Shougo/vimproc.vim' ]
+      \ }
 "" mikutter_mode
 if isdirectory(expand("~/workspace/vim/plugins/mikutter_mode.vim"))
     NeoBundle '~/workspace/vim/plugins', { "type": "nosync" }
@@ -534,6 +538,11 @@ Arpeggio nnoremap fk  <C-u>
 let g:hl_matchit_enable_on_vim_startup = 1
 let g:hl_matchit_hl_groupname = 'Title'
 let g:hl_matchit_allow_ft_regexp = 'html\|vim\|ruby\|sh'
+" }}}
+
+
+" pronamachang {{{
+let g:pronamachang_voice_root = "~/voice/"
 " }}}
 
 " Vim {{{

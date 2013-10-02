@@ -27,7 +27,7 @@ map > :forward<CR>
 "<S-Left>/<S-Right>で現在のタブの位置変更
 map <S-Left>  :tabmove! -1<CR>
 map <S-Right> :tabmove! +1<CR>
-nnoremap b :emenu Tools.Clearly<CR>
+nnoremap evc :emenu Tools.Clearly<CR>
 "hintcharをアルファベットに
 set hintchars=hjklasdfgyuiopqwertnmxcvbz
 
@@ -201,5 +201,10 @@ noremap <C-S-n> :removetabsright<CR>
 "+----------------------------------------------------------------------------------------+
 nnoremap <C-c> :javascript gBrowser.treeStyleTab.collapseExpandSubtree(TreeStyleTabService.getParentTab(gBrowser.selectedTab), true);<CR>
 nnoremap <C-x> :javascript gBrowser.treeStyleTab.collapseExpandSubtree(TreeStyleTabService.getParentTab(gBrowser.selectedTab), false);<CR>
+
+"+----------------------------------------------------------------------------------------+
+" hatena-bookmark
+"+----------------------------------------------------------------------------------------+
+javascript if (typeof hBookmark != 'undefined') liberator.loadScript('chrome://hatenabookmark/content/vimperator/plugin/hatenabookmark.js', {__proto__: this});
 
 source! ~/.vimperatorrc.local

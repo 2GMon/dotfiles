@@ -173,7 +173,8 @@ set fenc=utf-8
 set fencs=utf-8,iso-2022-jp,euc-jp,sjis,jis
 set fileformats=unix,dos,mac
 
-set number          " 行番号表示
+set number          " 行表示
+set relativenumber  " 相対的な行表示
 set showtabline=2   " タブページ常に表示
 set noswapfile      " スワップファイル作らない
 set nobackup        " バックアップファイル作らない

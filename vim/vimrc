@@ -119,6 +119,8 @@ NeoBundleLazy 'ujihisa/neco-ghc', {
 NeoBundleLazy 'eagletmt/ghcmod-vim', {
       \ 'autoload' : {'filetype' : ['haskell']}
       \ }
+"" Scala
+NeoBundle 'derekwyatt/vim-scala'
 "" pronamachang
 NeoBundle 'osyo-manga/vim-pronamachang', {
       \   'depends' : [ 'osyo-manga/vim-sound', 'Shougo/vimproc.vim' ]

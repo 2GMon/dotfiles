@@ -253,6 +253,7 @@ cnoremap <M-f> <S-Right>
 let g:unite_source_menu_menus = {}
 let g:unite_enable_start_insert=1 "入力モードで開始する
 let g:unite_source_file_mru_limit=500 " 最近使ったファイルの最大値
+let g:unite_source_file_mru_long_limit=5000 " Unite rewriteしたときの最近使ったファイルの最大値
 let g:unite_source_history_yank_enable=1 " history/yankの有効化
 call unite#custom_filters('file', [ 'matcher_default', 'matcher_hide_hidden_files', 'converter_relative_abbr' ])
 "" ESC2回押すと終了する

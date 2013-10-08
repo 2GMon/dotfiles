@@ -339,8 +339,6 @@ nnoremap <silent> ,Und :Unite -create -no-quit find<CR>
 "" grep
 nnoremap <silent> ,ugr :Unite -create grep<CR>
 nnoremap <silent> ,Ugr :Unite -create -no-quit grep<CR>
-nnoremap ,UGr :Unite -create grep:
-nnoremap ,UGr :Unite -create -no-quit grep:
 "}}}
 
 
@@ -586,6 +584,11 @@ augroup ruby-setting
   autocmd FileType ruby setlocal tabstop=2
   autocmd FileType eruby setlocal shiftwidth=2
   autocmd FileType eruby setlocal tabstop=2
+  " grep Ruby only
+  autocmd FileType ruby nnoremap ,uGr :<C-u>Unite -create grep:.:--include="*.rb":
+  autocmd FileType ruby nnoremap ,UGr :<C-u>Unite -create -no-quit grep:.:--include="*.rb":
+  autocmd FileType ruby nnoremap <silent> ,uGR :<C-u>execute 'Unite -create grep:.:--include="*.rb":' . expand('<cword>')<CR>
+  autocmd FileType ruby nnoremap <silent> ,UGR :<C-u>execute 'Unite -create -no-quit grep:.:--include="*.rb":' . expand('<cword>')<CR>
 augroup END
 " }}}
 
@@ -615,6 +618,18 @@ augroup END
 augroup tex-mapping
   autocmd!
   autocmd FileType tex nnoremap <buffer><C-o> :Unite -no-quite -no-start-insert -winheight=10 outline<CR>
+augroup END
+" }}}
+
+
+" PHP {{{
+augroup php-mapping
+  autocmd!
+  " grep PHP only
+  autocmd FileType php nnoremap ,uGr :<C-u>Unite -create grep:.:--include="*.php"\ --include="*.php?":
+  autocmd FileType php nnoremap ,UGr :<C-u>Unite -create -no-quit grep:.:--include="*.php"\ --include="*.php?":
+  autocmd FileType php nnoremap <silent> ,uGR :<C-u>execute 'Unite -create grep:.:--include="*.php"\ --include="*.php?":' . expand('<cword>')<CR>
+  autocmd FileType php nnoremap <silent> ,UGR :<C-u>execute 'Unite -create -no-quit grep:.:--include="*.php"\ --include="*.php?":' . expand('<cword>')<CR>
 augroup END
 " }}}
 

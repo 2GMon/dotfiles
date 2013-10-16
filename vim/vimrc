@@ -84,6 +84,7 @@ NeoBundle 'kana/vim-submode'
 NeoBundle 'osyo-manga/vim-precious', {'depends' :
       \ ['Shougo/context_filetype.vim']
       \ }
+NeoBundle 'rhysd/conflict-marker.vim'
 "" Colorscheme
 NeoBundle 'molokai'
 NeoBundle 'pyte'

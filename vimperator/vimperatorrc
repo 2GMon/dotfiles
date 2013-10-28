@@ -34,7 +34,7 @@ set hintchars=hjklasdfgyuiopqwertnmxcvbz
 "+----------------------------------------------------------------------------------------+
 " plugin_loader.js
 "+----------------------------------------------------------------------------------------+
-let g:plugin_loader_roots = "~/.vimperator/vimpr/ ~/.vimperator/caisui/plugin/"
+let g:plugin_loader_roots = "~/.vimperator/vimpr/ ~/.vimperator/caisui/plugin/ ~/.vimperator/websearch/"
 js <<EOF
 liberator.globalVariables.plugin_loader_plugins = `
     _libly
@@ -61,6 +61,7 @@ liberator.globalVariables.plugin_loader_plugins = `
     removetabs
     reporter
     vimp_to_android_phone
+    websearch
 `.split(/\s+/).filter(function(n) n);
 EOF
 

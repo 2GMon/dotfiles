@@ -50,7 +50,6 @@ liberator.globalVariables.plugin_loader_plugins = `
     escape-from-iframe
     option-selector
     migemized_find
-    forcefocuscontent
     command_menu
     fetchyoutube
     hints-for-embedded

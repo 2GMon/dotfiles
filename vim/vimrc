@@ -498,8 +498,8 @@ let g:vimshell_environment_term = 'vimshell'
 "" vimshellを同じタブ内に開くときの分割Exコマンド(水平分割 20行)
 let g:vimshell_split_command = 'split | resize 20'
 "" Rファイルを開いてる時，VimShellInteractiveでR起動
-call vimshell#set_dictionary_helper(
-      \ g:vimshell_interactive_interpreter_commands, 'r', 'R')
+"" call vimshell#set_dictionary_helper(
+""       \ g:vimshell_interactive_interpreter_commands, 'r', 'R')
 " }}}
 
 

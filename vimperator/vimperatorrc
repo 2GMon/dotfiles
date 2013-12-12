@@ -222,8 +222,8 @@ EOM
 "+----------------------------------------------------------------------------------------+
 nnoremap l -urls 'chrome://epubreader/*' :epubreader next<CR>
 nnoremap h -urls 'chrome://epubreader/*' :epubreader prev<CR>
-nnoremap > :epubreader nextchapter
-nnoremap < :epubreader prevchapter
-nnoremap ,j :epubreader jump 
+nnoremap > -urls 'chrome://epubreader/*' :epubreader nextchapter
+nnoremap < -urls 'chrome://epubreader/*' :epubreader prevchapter
+nnoremap ,j -urls 'chrome://epubreader/*' :epubreader jump 
 
 source! ~/.vimperatorrc.local

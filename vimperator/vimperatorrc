@@ -34,7 +34,7 @@ set hintchars=hjklasdfgyuiopqwertnmxcvbz
 "+----------------------------------------------------------------------------------------+
 " plugin_loader.js
 "+----------------------------------------------------------------------------------------+
-let g:plugin_loader_roots = "~/.vimperator/vimpr/ ~/.vimperator/caisui/plugin/ ~/.vimperator/websearch/"
+let g:plugin_loader_roots = "~/.vimperator/vimpr/ ~/.vimperator/caisui/plugin/ ~/.vimperator/websearch/ ~/.vimperator/speakerdeck/"
 js <<EOF
 liberator.globalVariables.plugin_loader_plugins = `
     _libly
@@ -62,6 +62,7 @@ liberator.globalVariables.plugin_loader_plugins = `
     vimp_to_android_phone
     websearch
     epub-reader
+    speakerdeck
 `.split(/\s+/).filter(function(n) n);
 EOF
 
@@ -225,5 +226,9 @@ nnoremap h -urls 'chrome://epubreader/*' :epubreader prev<CR>
 nnoremap > -urls 'chrome://epubreader/*' :epubreader nextchapter
 nnoremap < -urls 'chrome://epubreader/*' :epubreader prevchapter
 nnoremap ,j -urls 'chrome://epubreader/*' :epubreader jump 
+" speakerdeck
+"+----------------------------------------------------------------------------------------+
+nnoremap -urls=speakerdeck\\.com l :speakerdeck next<CR>
+nnoremap -urls=speakerdeck\\.com h :speakerdeck prev<CR>
 
 source! ~/.vimperatorrc.local

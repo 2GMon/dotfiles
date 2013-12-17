@@ -1,0 +1,3 @@
+[submodule "vimperator/vimperator/speakerdeck"]
+	path = vimperator/vimperator/speakerdeck
+	url = https://gist.github.com/4105959.git

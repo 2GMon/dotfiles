@@ -341,6 +341,9 @@ nnoremap <silent> ,Und :Unite -create -no-quit find<CR>
 "" grep
 nnoremap <silent> ,ugr :Unite -create grep<CR>
 nnoremap <silent> ,Ugr :Unite -create -no-quit grep<CR>
+"" unite giti
+nnoremap <silent> ,ugi :Unite -create giti<CR>
+nnoremap <silent> ,Ugi :Unite -create -no-quit giti<CR>
 "}}}
 
 

@@ -2,8 +2,6 @@
 vim/vim/bundle/
 
 # vimperator関係
-vimperator/vimperator/caisui
-vimperator/vimperator/vimpr
 vimperator/vimperator/info/default/history-command
 vimperator/vimperator/info/default/history-search
 vimperator/vimperator/info/default/local-marks

@@ -54,7 +54,6 @@ liberator.globalVariables.plugin_loader_plugins = `
     fetchyoutube
     hints-for-embedded
     hints-ext
-    nextlink
     open-frame
     refe
     removetabs

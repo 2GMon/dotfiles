@@ -642,6 +642,19 @@ augroup END
 " }}}
 
 
+" Go {{{
+augroup go-mapping
+  autocmd!
+  " grep Go only
+  autocmd FileType go nnoremap ,uGr :<C-u>Unite -create grep:.:--include="*.go":
+  autocmd FileType go nnoremap ,UGr :<C-u>Unite -create -no-quit grep:.:--include="*.go":
+  autocmd FileType go nnoremap <silent> ,uGR :<C-u>execute 'Unite -create grep:.:--include="*.go":' . expand('<cword>')<CR>
+  autocmd FileType go nnoremap <silent> ,UGR :<C-u>execute 'Unite -create -no-quit grep:.:--include="*.go":' . expand('<cword>')<CR>
+  autocmd FileType go setlocal noexpandtab
+augroup END
+" }}}
+
+
 " snippet {{{
 augroup snippets-setting
   autocmd!

@@ -195,7 +195,7 @@ set tabstop=4
 set backspace=indent,eol,start  " Backspaceで色々削除可能
 " 不可視文字表示
 set list
-set listchars=tab:>-,trail:-
+set listchars=tab:\|\ ,trail:-
 set whichwrap=b,s,h,l           " カーソルが行頭，行末で止まらない
 " 全角文字をちゃんとあつかう
 if has('gui_running')

@@ -214,7 +214,6 @@ set nrformats=alpha,octal,hex     " Ctrl+A, Ctrl+Xの加算減算で認識する
 set wildmode=list,full            " exコマンド時，Tabで補完候補一覧
 set undolevels=10000              " Undoの回数制限
 
-set scrollbind
 set diffopt=filler,vertical
 " ステータスラインの設定
 set statusline&

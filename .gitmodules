@@ -7,3 +7,6 @@
 [submodule "vimperator/vimperator/vimpr"]
 	path = vimperator/vimperator/vimpr
 	url = https://github.com/vimpr/vimperator-plugins.git
+[submodule "zsh/zsh/zsh-completions"]
+	path = zsh/zsh/zsh-completions
+	url = https://github.com/zsh-users/zsh-completions

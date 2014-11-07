@@ -13,3 +13,6 @@
 [submodule "zsh/zsh/zsh-syntax-highlighting"]
 	path = zsh/zsh/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
+[submodule "vimperator/vimperator/vimp_paper"]
+	path = vimperator/vimperator/vimp_paper
+	url = git@github.com:2GMon/vimp_paper.git

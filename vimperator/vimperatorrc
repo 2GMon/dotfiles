@@ -34,7 +34,7 @@ set hintchars=hjklasdfgyuiopqwertnmxcvbz
 "+----------------------------------------------------------------------------------------+
 " plugin_loader.js
 "+----------------------------------------------------------------------------------------+
-let g:plugin_loader_roots = "~/.vimperator/vimpr/ ~/.vimperator/caisui/plugin/ ~/.vimperator/websearch/ ~/.vimperator/speakerdeck/"
+let g:plugin_loader_roots = "~/.vimperator/vimpr/ ~/.vimperator/caisui/plugin/ ~/.vimperator/websearch/ ~/.vimperator/speakerdeck/ ~/.vimperator/vimp_paper/"
 js <<EOF
 liberator.globalVariables.plugin_loader_plugins = `
     _libly
@@ -62,6 +62,7 @@ liberator.globalVariables.plugin_loader_plugins = `
     websearch
     epub-reader
     speakerdeck
+    vimp_paper
 `.split(/\s+/).filter(function(n) n);
 EOF
 

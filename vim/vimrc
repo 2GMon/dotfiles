@@ -190,6 +190,7 @@ set showtabline=2   " タブページ常に表示
 set noswapfile      " スワップファイル作らない
 set nobackup        " バックアップファイル作らない
 set showmatch       " 対応する括弧の表示
+set matchtime=1     " 対応する括弧の表示を0.1*1秒に
 " デフォルトインデント
 set autoindent smartindent
 set shiftwidth=4

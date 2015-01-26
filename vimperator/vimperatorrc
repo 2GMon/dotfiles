@@ -31,6 +31,8 @@ nnoremap evc :emenu Tools.Clearly<CR>
 "hintcharをアルファベットに
 set hintchars=hjklasdfgyuiopqwertnmxcvbz
 
+set status+=ssl
+
 "+----------------------------------------------------------------------------------------+
 " plugin_loader.js
 "+----------------------------------------------------------------------------------------+

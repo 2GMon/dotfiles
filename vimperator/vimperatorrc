@@ -36,7 +36,7 @@ set status+=ssl
 "+----------------------------------------------------------------------------------------+
 " plugin_loader.js
 "+----------------------------------------------------------------------------------------+
-let g:plugin_loader_roots = "~/.vimperator/vimpr/ ~/.vimperator/caisui/plugin/ ~/.vimperator/websearch/ ~/.vimperator/speakerdeck/ ~/.vimperator/vimp_paper/"
+let g:plugin_loader_roots = "~/.vimperator/vimpr/ ~/.vimperator/caisui/plugin/ ~/.vimperator/speakerdeck/ ~/.vimperator/vimp_paper/"
 js <<EOF
 liberator.globalVariables.plugin_loader_plugins = `
     _libly
@@ -61,7 +61,6 @@ liberator.globalVariables.plugin_loader_plugins = `
     removetabs
     reporter
     vimp_to_android_phone
-    websearch
     epub-reader
     speakerdeck
     vimp_paper
@@ -214,11 +213,16 @@ javascript if (typeof hBookmark != 'undefined') liberator.loadScript('chrome://h
 "+----------------------------------------------------------------------------------------+
 " websearch
 "+----------------------------------------------------------------------------------------+
-javascript <<EOM
-liberator.globalVariables.webSearchTemplates = [
-  { names: ['gems'], description: 'search rubygems.org', url: 'http://rubygems.org/search?utf8=%E2%9C%93&query=%KEYWORD%' }
+javascript <<EOS
+var list = [
+  { names: ['alc'], description: 'search in alc', url: 'http://eow.alc.co.jp/search?q=%KEYWORD%' },
+  { names: ['gems'], description: 'search in rubygems.org', url: 'http://rubygems.org/search?utf8=%E2%9C%93&query=%KEYWORD%' }
 ];
-EOM
+list.forEach(function(elem) {
+    commands.addUserCommand(elem.names, elem.description,
+        function(args) { liberator.open(elem.url.replace(/%KEYWORD%/, args.join('+')), liberator.NEW_BACKGROUND_TAB); })
+})
+EOS
 
 "+----------------------------------------------------------------------------------------+
 " epub-reader

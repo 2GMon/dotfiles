@@ -33,6 +33,9 @@ set hintchars=hjklasdfgyuiopqwertnmxcvbz
 
 set status+=ssl
 
+" treeStyleTabがコマンドラインに重ならないように
+style! -name=treestyletab chrome://* .tabbrowser-tab { z-index: 0 !important; }
+
 "+----------------------------------------------------------------------------------------+
 " plugin_loader.js
 "+----------------------------------------------------------------------------------------+

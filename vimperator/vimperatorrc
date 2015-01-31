@@ -230,10 +230,13 @@ var list = [
   { names: ['amazon'], description: 'amazon.co.jp', url: 'http://www.amazon.co.jp/s/?field-keywords=%KEYWORD%' },
   { names: ['yodobashi'], description: 'ヨドバシカメラ', url: 'http://www.yodobashi.com/ec/category/index.html?word=%KEYWORD%' }
 ];
-list.forEach(function(elem) {
+addSearchCommand = function(list) {
+  list.forEach(function(elem) {
     commands.addUserCommand(elem.names, elem.description,
-        function(args) { liberator.open(elem.url.replace(/%KEYWORD%/, args.join('+')), liberator.NEW_TAB); })
-})
+      function(args) { liberator.open(elem.url.replace(/%KEYWORD%/, args.join('+')), liberator.NEW_TAB); })
+  })
+}
+addSearchCommand(list);
 EOS
 
 "+----------------------------------------------------------------------------------------+

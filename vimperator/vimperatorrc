@@ -229,7 +229,7 @@ var list = [
 ];
 list.forEach(function(elem) {
     commands.addUserCommand(elem.names, elem.description,
-        function(args) { liberator.open(elem.url.replace(/%KEYWORD%/, args.join('+')), liberator.NEW_BACKGROUND_TAB); })
+        function(args) { liberator.open(elem.url.replace(/%KEYWORD%/, args.join('+')), liberator.NEW_TAB); })
 })
 EOS
 

@@ -33,6 +33,8 @@ set hintchars=hjklasdfgyuiopqwertnmxcvbz
 
 set status+=ssl
 
+set focuscontent
+
 " treeStyleTabがコマンドラインに重ならないように
 style! -name=treestyletab chrome://* .tabbrowser-tab { z-index: 0 !important; }
 hi Normal color: black; background: rgba(255, 255, 255, 0.8);
@@ -70,6 +72,7 @@ liberator.globalVariables.plugin_loader_plugins = `
     epub-reader
     speakerdeck
     vimp_paper
+    forcefocuscontent
 `.split(/\s+/).filter(function(n) n);
 EOF
 

@@ -89,6 +89,7 @@ NeoBundle 'osyo-manga/vim-precious', {'depends' :
 NeoBundle 'rhysd/conflict-marker.vim'
 NeoBundle 'DrawIt'
 NeoBundle 'Yggdroot/indentLine'
+NeoBundle 'glidenote/memolist.vim'
 "" Colorscheme
 NeoBundle 'molokai'
 NeoBundle 'pyte'
@@ -523,6 +524,14 @@ let errormarker_errortext = "!!"
 let errormarker_warningtext = "??"
 let errormarker_errorgroup = "ErrorMsg"
 let errormarker_warninggroup = "Todo"
+" }}}
+
+
+"memolistの設定 {{{
+let g:memolist_path = "~/.memolist"
+map ,mn  :MemoNew<CR>
+nmap ,mg :<C-u>execute('Unite grep:' . g:memolist_path . ':-inH\ -r')<CR>
+nmap ,ml :<C-u>execute('Unite file_rec/async:' . g:memolist_path)<CR>
 " }}}
 
 

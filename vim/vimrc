@@ -275,7 +275,7 @@ au FileType unite imap     <silent> <buffer> <C-w>      <Plug>(unite_delete_back
 "" バッファ一覧
 noremap <silent> ,ub :Unite -create buffer<CR>
 "" ファイル一覧
-noremap <silent> ,uf :UniteWithBufferDir -create file<CR>
+noremap <silent> ,uf :UniteWithBufferDir -create file file/new<CR>
 "" 最近使ったファイルの一覧
 noremap <silent> ,ur :Unite -create register<CR>
 "" 最近使ったファイルの一覧

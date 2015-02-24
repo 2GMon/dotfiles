@@ -12,3 +12,6 @@ vimperator/vimperator/info/default/plugins-libly-wedata-AutoPagerize-items
 # mlterm関係
 mlterm/challenge
 mlterm/msg.log
+
+# tmux plugin
+tmux/tmux/plugins/tmux-*

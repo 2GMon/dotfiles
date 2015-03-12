@@ -228,6 +228,7 @@ var list = [
   { names: ['gems'], description: 'search in rubygems.org', url: 'http://rubygems.org/search?utf8=%E2%9C%93&query=%KEYWORD%' },
   { names: ['rurema'], description: 'るりまサーチ', url: 'http://rurema.clear-code.com/query:%KEYWORD%/' },
   { names: ['amazon'], description: 'amazon.co.jp', url: 'http://www.amazon.co.jp/s/?field-keywords=%KEYWORD%' },
+  { names: ['codic'], description: 'codic', url: 'http://codic.jp/search?q=%KEYWORD%' },
   { names: ['yodobashi'], description: 'ヨドバシカメラ', url: 'http://www.yodobashi.com/ec/category/index.html?word=%KEYWORD%' }
 ];
 addSearchCommand = function(list) {

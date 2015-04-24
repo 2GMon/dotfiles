@@ -678,3 +678,8 @@ augroup snippets-setting
   autocmd FileType snippet setlocal noexpandtab
 augroup END
 " }}}
+
+
+if filereadable('~/.vimrc.local')
+  source ~/.vimrc.local
+endif

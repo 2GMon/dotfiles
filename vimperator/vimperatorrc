@@ -5,7 +5,7 @@ set! extensions.checkCompatibility.20.0=false
 set gui=noaddons,nobookmarks,nomenu,nonavigation,tabs
 
 set newtab="all"
-autocmd VimperatorEnter ".*" :highlight HintExt font-family: monospace; font-size: 14px; text-transform: uppercase; color: white; background-color: rgba(255,0,0,1); border-color: ButtonShadow; border-width: 0px; border-style: solid;
+autocmd VimperatorEnter ".*" :highlight HintExt font-family: monospace; font-size: 14px; font-weight: bold; text-transform: uppercase; color: white; background-color: rgba(255,0,0,1); border-color: ButtonShadow; border-width: 0px; border-style: solid;
 
 "+----------------------------------------------------------------------------------------+
 " キーマップ設定

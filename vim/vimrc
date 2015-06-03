@@ -367,18 +367,36 @@ call submode#enter_with('changetab', 'n', '', 'gT', 'gT')
 call submode#map('changetab', 'n', '', 't', 'gt')
 call submode#map('changetab', 'n', '', 'T', 'gT')
 "" tab移動
-function! s:movetab(n)
-  let new_position = tabpagenr() - 1 + a:n
-  let number_of_tags = tabpagenr("$")
+if v:version < 704
+  function! s:movetab(n)
+    let new_position = tabpagenr() - 1 + a:n
+    let number_of_tags = tabpagenr("$")
 
-  if new_position < 0
-    let new_position = number_of_tags - 1
-  elseif new_position >= number_of_tags
-    let new_position = 0
-  endif
+    if new_position < 0
+      let new_position = number_of_tags - 1
+    elseif new_position >= number_of_tags
+      let new_position = 0
+    endif
 
-  execute 'tabmove ' . new_position
-endfunction
+    execute 'tabmove ' . new_position
+  endfunction
+else
+  function! s:movetab(n)
+    let new_position = tabpagenr() -1 + a:n
+    let number_of_tags = tabpagenr("$")
+
+    if new_position < 0
+      execute 'tabmove $'
+    elseif new_position >= number_of_tags
+      execute 'tabmove 0'
+    elseif a:n == 1
+      execute '+tabmove'
+    else
+      execute '-tabmove'
+    endif
+
+  endfunction
+endif
 let s:movetab = ':<C-u>call ' . s:SIDP() . 'movetab(%d)<CR>'
 call submode#enter_with('movetab', 'n', '', 'gr', printf(s:movetab, 1))
 call submode#enter_with('movetab', 'n', '', 'gR', printf(s:movetab, -1))

@@ -129,6 +129,9 @@ NeoBundleLazy 'eagletmt/ghcmod-vim', {
 NeoBundle 'derekwyatt/vim-scala'
 "" HTML
 NeoBundle 'mattn/emmet-vim'
+"" TypeScript
+NeoBundle 'https://github.com/leafgarland/typescript-vim.git'
+NeoBundle 'https://github.com/clausreinke/typescript-tools.git'
 "" pronamachang
 NeoBundle 'osyo-manga/vim-pronamachang', {
       \   'depends' : [ 'osyo-manga/vim-sound', 'Shougo/vimproc.vim' ]

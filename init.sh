@@ -15,3 +15,5 @@ ln -s ~/dotfiles/vimperator/vimperatorrc ~/.vimperatorrc
 ln -s ~/dotfiles/vimperator/vimperator ~/.vimperator
 
 ln -s ~/dotfiles/gem/gemrc ~/.gemrc
+
+ln -s ~/dotfiles/awesome ~/.config/awesome

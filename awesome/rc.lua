@@ -270,6 +270,8 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Shift"   }, "m", function () awful.util.spawn("/home/t2gmon/bin/mikutter") end),
     -- firefox起動
     awful.key({ modkey, "Shift"   }, "f", function () awful.util.spawn("/usr/bin/firefox") end),
+    -- line起動
+    awful.key({ modkey, "Shift"   }, "l", function () awful.util.spawn("/home/t2gmon/bin/line") end),
     -- awesome再起動
     awful.key({ modkey, "Control" }, "r", awesome.restart),
     -- awesome終了

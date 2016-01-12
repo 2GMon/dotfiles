@@ -109,14 +109,6 @@ NeoBundleLazy 'tpope/vim-rails', {
 NeoBundleLazy 'rhysd/neco-ruby-keyword-args', {
       \ 'autoload' : {'filetype' : ['ruby']}
       \ }
-"" Dart snippets
-NeoBundleLazy "git://github.com/osyo-manga/neocomplcache-snippets-complete-dart.git", {
-      \ 'autoload' : {'filetype' : ['dart']}
-      \ }
-"" Dart syntax
-NeoBundleLazy "git://github.com/vim-scripts/Dart.git", {
-      \ 'autoload' : {'filetype' : ['dart']}
-      \ }
 "" Haskell
 NeoBundleLazy 'ujihisa/neco-ghc', {
       \ 'depends' : ['Shougo/neocomplcache'],

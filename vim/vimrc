@@ -32,7 +32,10 @@ NeoBundle 'ujihisa/unite-rake'
 NeoBundle 'basyura/unite-rails'
 NeoBundle 'Shougo/unite-build'
 NeoBundle 'hewes/unite-gtags'
-NeoBundle 'sgur/unite-git_grep'
+NeoBundleLazy 'lambdalisue/unite-grep-vcs', {
+    \ 'autoload': {
+    \    'unite_sources': ['grep/git', 'grep/hg'],
+    \}}
 NeoBundle 'Shougo/neomru.vim'
 "" ネタのUnite Source
 NeoBundle 'mattn/unite-nyancat'
@@ -340,8 +343,8 @@ nnoremap ,uR :<C-u>Unite -create rails/
 nnoremap <silent> ,ugt :Unite -create gtags/context<CR>
 nnoremap <silent> ,Ugt :Unite -create -no-quit gtags/context<CR>
 "" Git grep
-nnoremap <silent> ,uggr :Unite -create vcs_grep/git<CR>
-nnoremap <silent> ,Uggr :Unite -create -no-quit vcs_grep/git<CR>
+nnoremap <silent> ,uggr :Unite -create grep/git<CR>
+nnoremap <silent> ,Uggr :Unite -create -no-quit grep/git<CR>
 "" find
 nnoremap <silent> ,und :Unite -create find<CR>
 nnoremap <silent> ,Und :Unite -create -no-quit find<CR>

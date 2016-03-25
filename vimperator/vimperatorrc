@@ -5,7 +5,6 @@ set! extensions.checkCompatibility.20.0=false
 set gui=noaddons,nobookmarks,nomenu,nonavigation,tabs
 
 set newtab="all"
-autocmd VimperatorEnter ".*" :highlight HintExt font-family: monospace; font-size: 14px; font-weight: bold; text-transform: uppercase; color: white; background-color: rgba(255,0,0,1); border-color: ButtonShadow; border-width: 0px; border-style: solid;
 
 "+----------------------------------------------------------------------------------------+
 " キーマップ設定
@@ -40,6 +39,7 @@ style! -name=treestyletab chrome://* .tabbrowser-tab { z-index: 0 !important; }
 hi Normal color: black; background: rgba(255, 255, 255, 0.8);
 hi CompTitle font-weight: bold; background: linear-gradient(to top, #DBDBDB 19%, #D9D9D9, #E7E7E7 100%); opacity: 0.6;
 hi CompItem[selected] background: #FFEC8B; box-shadow: 0px 0px 1px #CC0; opacity: 0.6;
+hi Hint font-family: monospace; font-size: 12px; font-weight: bold; text-transform: uppercase; color: white; background-color: rgba(255,0,0,1); border-color: ButtonShadow; border-width: 0px; border-style: solid;
 
 "+----------------------------------------------------------------------------------------+
 " plugin_loader.js
@@ -63,11 +63,9 @@ liberator.globalVariables.plugin_loader_plugins = `
     command_menu
     fetchyoutube
     hints-for-embedded
-    hints-ext
     open-frame
     refe
     removetabs
-    reporter
     vimp_to_android_phone
     epub-reader
     speakerdeck
@@ -80,26 +78,6 @@ EOF
 " appendAnchor.js
 "+----------------------------------------------------------------------------------------+
 let g:auto_append_anchor_once = "true"
-
-"+----------------------------------------------------------------------------------------+
-" hints-ext.js
-"+----------------------------------------------------------------------------------------+
-let use_hintchars_ex=1
-" クエリーセレクタ版に置き換え
-let use_hints_ext_hinttags=1
-let use_hints_ext_extendedhinttags=1
-" キータイプ数を揃える
-let use_hintchars_ex=2
-let use_hints_ext_caret="C"
-let use_hints_ext_visual="V"
-" kで画像を非表示にするヒントを表示
-js <<EOM
-hints.addMode("k", "Kill image",
-    function (elem) elem.style.display="none",
-    function () "//img");
-EOM
-" ヒント表示した時に<C-l>で重ならないように配置しなおす
-autocmd VimperatorEnter ".*" :js hints.addSimpleMap("<C-l>", function() this.relocation())
 
 
 "+----------------------------------------------------------------------------------------+

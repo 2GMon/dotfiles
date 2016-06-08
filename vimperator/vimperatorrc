@@ -60,7 +60,6 @@ liberator.globalVariables.plugin_loader_plugins = `
     escape-from-iframe
     option-selector
     migemized_find
-    command_menu
     fetchyoutube
     hints-for-embedded
     removetabs
@@ -68,7 +67,6 @@ liberator.globalVariables.plugin_loader_plugins = `
     epub-reader
     speakerdeck
     vimp_paper
-    forcefocuscontent
 `.split(/\s+/).filter(function(n) n);
 EOF
 

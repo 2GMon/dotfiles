@@ -203,6 +203,8 @@ var list = [
   { names: ['rurema'], description: 'るりまサーチ', url: 'http://rurema.clear-code.com/query:%KEYWORD%/' },
   { names: ['amazon'], description: 'amazon.co.jp', url: 'http://www.amazon.co.jp/s/?field-keywords=%KEYWORD%' },
   { names: ['codic'], description: 'codic', url: 'http://codic.jp/search?q=%KEYWORD%' },
+  { names: ['mysql56'], description: 'mysql5.6', url: 'https://dev.mysql.com/doc/search/?d=171&q=%KEYWORD%' },
+  { names: ['mysql57'], description: 'mysql5.7', url: 'https://dev.mysql.com/doc/search/?d=12&q=%KEYWORD%' },
   { names: ['yodobashi'], description: 'ヨドバシカメラ', url: 'http://www.yodobashi.com/ec/category/index.html?word=%KEYWORD%' }
 ];
 addSearchCommand = function(list) {

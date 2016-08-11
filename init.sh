@@ -1,19 +1,63 @@
 #!/bin/sh
 
-ln -s ~/dotfiles/mlterm ~/.mlterm
+# zsh
+if [ ! -e ~/.zshrc ]; then
+    ln -s ~/dotfiles/zsh/zshrc ~/.zshrc
+fi
+if [ ! -e ~/.zsh ]; then
+    ln -s ~/dotfiles/zsh/zsh ~/.zsh
+fi
 
-ln -s ~/dotfiles/zsh/zshrc ~/.zshrc
-ln -s ~/dotfiles/zsh/zsh ~/.zsh
+# mlterm
+if [ ! -e ~/.mlterm ]; then
+    ln -s ~/dotfiles/mlterm ~/.mlterm
+fi
 
-ln -s ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
-ln -s ~/dotfiles/tmux/tmux ~/.tmux
+# tmux
+if [ ! -e ~/.tmux.conf ]; then
+    ln -s ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
+fi
+if [ ! -e ~/.tmux ]; then
+    ln -s ~/dotfiles/tmux/tmux ~/.tmux
+fi
 
-ln -s ~/dotfiles/vim/vimrc ~/.vimrc
-ln -s ~/dotfiles/vim/vim ~/.vim
+# vim
+if [ ! -e ~/.vimrc ]; then
+    ln -s ~/dotfiles/vim/vimrc ~/.vimrc
+fi
+if [ ! -e ~/.vim ]; then
+    ln -s ~/dotfiles/vim/vim ~/.vim
+fi
 
-ln -s ~/dotfiles/vimperator/vimperatorrc ~/.vimperatorrc
-ln -s ~/dotfiles/vimperator/vimperator ~/.vimperator
+# vimperator
+if [ ! -e ~/.vimperatorrc ]; then
+    ln -s ~/dotfiles/vimperator/vimperatorrc ~/.vimperatorrc
+fi
+if [ ! -e ~/.vimperator ]; then
+    ln -s ~/dotfiles/vimperator/vimperator ~/.vimperator
+fi
 
-ln -s ~/dotfiles/gem/gemrc ~/.gemrc
+# rubygems
+if [ ! -e ~/.gemrc ]; then
+    ln -s ~/dotfiles/gem/gemrc ~/.gemrc
+fi
 
-ln -s ~/dotfiles/awesome ~/.config/awesome
+# awesome
+if [ `uname -s` = 'Linux' ]; then                                                                                                                                                [NOR] [~/dotfiles]
+    if [ ! -e ~/.config ]; then
+        mkdir ~/.config
+    fi
+    if [ ! -e ~/.config/awesome ]; then
+        ln -s ~/dotfiles/awesome ~/.config/awesome
+    fi
+fi
+
+# フォント設定(IPAモナーフォント前提)
+if [ `uname -s` = 'Linux' ]; then                                                                                                                                                [NOR] [~/dotfiles]
+    if [ ! -e ~/.config ]; then
+        mkdir ~/.config
+    fi
+    if [ ! -e ~/.config/fontconfig ]; then
+        ln -s ~/dotfiles/fontconfig ~/.config/fontconfig
+    fi
+fi

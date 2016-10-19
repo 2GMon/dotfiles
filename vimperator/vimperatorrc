@@ -52,19 +52,13 @@ liberator.globalVariables.plugin_loader_plugins = `
     commandBookmarklet
     copy
     stella
-    twittperator
     zip-de-download
-    reload-image
     slideshare
     liberator-overlay-ext
     escape-from-iframe
     option-selector
     migemized_find
-    fetchyoutube
     hints-for-embedded
-    removetabs
-    vimp_to_android_phone
-    epub-reader
     speakerdeck
     vimp_paper
 `.split(/\s+/).filter(function(n) n);

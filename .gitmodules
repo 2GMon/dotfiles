@@ -19,6 +19,6 @@
 [submodule "tmux/tmux/plugins/tpm"]
 	path = tmux/tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
-[submodule "awesome/awesome-batteryInfo"]
-	path = awesome/awesome-batteryInfo
-	url = git@github.com:koenwtje/awesome-batteryInfo.git
+[submodule "awesome/lain"]
+	path = awesome/lain
+	url = https://github.com/copycat-killer/lain.git

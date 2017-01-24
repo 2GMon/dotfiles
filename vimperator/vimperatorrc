@@ -52,15 +52,10 @@ liberator.globalVariables.plugin_loader_plugins = `
     commandBookmarklet
     copy
     stella
-    zip-de-download
     slideshare
-    liberator-overlay-ext
-    escape-from-iframe
-    option-selector
-    migemized_find
-    hints-for-embedded
     speakerdeck
     vimp_paper
+    twittperator
 `.split(/\s+/).filter(function(n) n);
 EOF
 
@@ -125,11 +120,6 @@ addLocalMappings(
 EOF
 
 "+----------------------------------------------------------------------------------------+
-" zipDeDownload.js (画像をzipで固めてダウウンロード)
-"+----------------------------------------------------------------------------------------+
-let g:zipDownloadDir="~/Downloads"
-
-"+----------------------------------------------------------------------------------------+
 " copy.js
 "+----------------------------------------------------------------------------------------+
 javascript <<EOF
@@ -164,17 +154,6 @@ EOF
 "+----------------------------------------------------------------------------------------+
 nnoremap -urls=www\\.slideshare\\.net l :slideshare next<CR>
 nnoremap -urls=www\\.slideshare\\.net h :slideshare prev<CR>
-
-"+----------------------------------------------------------------------------------------+
-" liberator-overlay-ext.js
-"+----------------------------------------------------------------------------------------+
-:js mappings.addUserMap([modes.COMMAND_LINE], ["<C-g>"], "", function () plugins.liberatorOverlayExt.toggleShowBackground());
-
-"+----------------------------------------------------------------------------------------+
-" removetabs.js
-"+----------------------------------------------------------------------------------------+
-noremap <C-S-p> :removetabsleft<CR>
-noremap <C-S-n> :removetabsright<CR>
 
 "+----------------------------------------------------------------------------------------+
 " TreeStyleTab
@@ -218,6 +197,8 @@ nnoremap h -urls 'chrome://epubreader/*' :epubreader prev<CR>
 nnoremap > -urls 'chrome://epubreader/*' :epubreader nextchapter
 nnoremap < -urls 'chrome://epubreader/*' :epubreader prevchapter
 nnoremap ,j -urls 'chrome://epubreader/*' :epubreader jump 
+
+"+----------------------------------------------------------------------------------------+
 " speakerdeck
 "+----------------------------------------------------------------------------------------+
 nnoremap -urls=speakerdeck\\.com l :speakerdeck next<CR>

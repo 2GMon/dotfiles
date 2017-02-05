@@ -306,12 +306,27 @@ globalkeys = awful.util.table.join(
               {description = "reload awesome", group = "awesome"}),
     awful.key({ modkey, "Shift"   }, "q", awesome.quit,
               {description = "quit awesome", group = "awesome"}),
-    -- mikutter起動
-    awful.key({ modkey, "Shift"   }, "m", function () awful.spawn("/home/t2gmon/bin/mikutter") end,
-              {description = "Run mikutter", group = "launcher"}),
-    -- firefox起動
-    awful.key({ modkey, "Shift"   }, "f", function () awful.spawn("/usr/bin/firefox") end,
-              {description = "Run Firefox", group = "launcher"}),
+    -- mikutter起動 or フォーカス
+    awful.key({ modkey, "Shift"   }, 'm', function ()
+        local matcher = function (c)
+            return awful.rules.match(c, { class = "Mikutter.rb", name = "mikutter" })
+        end
+        awful.client.run_or_raise('/home/t2gmon/bin/mikutter', matcher)
+    end, { description = "Run or Raise mikutter", group = "launcher" }),
+    -- firefox起動 or フォーカス
+    awful.key({ modkey, "Shift"   }, 'f', function ()
+        local matcher = function (c)
+            return awful.rules.match(c, { class = "Firefox" })
+        end
+        awful.client.run_or_raise('/usr/bin/firefox', matcher)
+    end, { description = "Run or Raise Firefox", group = "launcher" }),
+    -- ターミナルフォーカス
+    awful.key({ modkey, "Shift"   }, 'Return', function ()
+        local matcher = function (c)
+            return awful.rules.match(c, { class = "mlterm" })
+        end
+        awful.client.run_or_raise('mlterm', matcher)
+    end, { description = "Run or Raise mlterm", group = "launcher" }),
 
     awful.key({ modkey,  "Control" }, "k",     function () awful.tag.incmwfact( 0.05)          end,
               {description = "increase master width factor", group = "layout"}),

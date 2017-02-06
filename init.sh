@@ -37,6 +37,11 @@ if [ ! -e ~/.vimperator ]; then
     ln -s ~/dotfiles/vimperator/vimperator ~/.vimperator
 fi
 
+# gcli
+if [ ! -e ~/.gcli ]; then
+    ln -s ~/dotfiles/gcli ~/.gcli
+fi
+
 # rubygems
 if [ ! -e ~/.gemrc ]; then
     ln -s ~/dotfiles/gem/gemrc ~/.gemrc

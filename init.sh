@@ -43,7 +43,7 @@ if [ ! -e ~/.gemrc ]; then
 fi
 
 # awesome
-if [ `uname -s` = 'Linux' ]; then                                                                                                                                                [NOR] [~/dotfiles]
+if [ `uname -s` = 'Linux' ]; then
     if [ ! -e ~/.config ]; then
         mkdir ~/.config
     fi
@@ -53,7 +53,7 @@ if [ `uname -s` = 'Linux' ]; then                                               
 fi
 
 # フォント設定(IPAモナーフォント前提)
-if [ `uname -s` = 'Linux' ]; then                                                                                                                                                [NOR] [~/dotfiles]
+if [ `uname -s` = 'Linux' ]; then
     if [ ! -e ~/.config ]; then
         mkdir ~/.config
     fi

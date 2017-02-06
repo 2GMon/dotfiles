@@ -1,0 +1,15 @@
+[{
+  name: "amazon",
+  description: "search amazon",
+  runAt: "client",
+  params: [{
+    name: 'word',
+    type: 'string',
+    description: 'search word',
+  }],
+  exec: function(args, context) {
+    let chromeWin = context.environment.chromeWindow || context.environment.chromeDocument.defaultView;
+    let url = 'http://www.amazon.co.jp/s/?field-keywords=' + args.word;
+    chromeWin.gBrowser.addTab(url);
+  }
+}]

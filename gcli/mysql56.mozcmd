@@ -1,0 +1,15 @@
+[{
+  name: "mysql56",
+  description: "search mysql56",
+  runAt: "client",
+  params: [{
+    name: 'word',
+    type: 'string',
+    description: 'search word',
+  }],
+  exec: function(args, context) {
+    let chromeWin = context.environment.chromeWindow || context.environment.chromeDocument.defaultView;
+    let url = 'https://dev.mysql.com/doc/search/?d=171&q=' + args.word;
+    chromeWin.gBrowser.addTab(url);
+  }
+}]

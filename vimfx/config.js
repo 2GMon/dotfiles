@@ -58,4 +58,5 @@ function add_quickmark(name, url, key) { // {{{
 } // }}}
 add_quickmark('inoreader', 'www.inoreader.com', 'r');
 add_quickmark('instapaper', 'instapaper.com', 'i');
+add_quickmark('pockert', 'getpocket.com', 'p');
 // }}}

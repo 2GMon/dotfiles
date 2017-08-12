@@ -27,7 +27,7 @@ vimfx.addKeyOverrides(
       'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'x', 'y', 'z'
     ]
   ],
-  [ location => location.hostname === 'www.inoreader.com',
+  [ location => location.hostname === 'jp.inoreader.com',
     [
       'g', 'a', 'j', 'k', 's', 'l', 'n', 'p', 'm', 'b', 'v', 'f', 'J', 'K', '.'
     ]
@@ -56,6 +56,6 @@ function add_quickmark(name, url, key) { // {{{
   vimfx.set('custom.mode.normal.goto_' + name, 'go' + key)
   vimfx.set('custom.mode.normal.goto_' + name + '_newtab', 'gn' + key)
 } // }}}
-add_quickmark('inoreader', 'www.inoreader.com', 'r');
+add_quickmark('inoreader', 'jp.inoreader.com', 'r');
 add_quickmark('instapaper', 'instapaper.com', 'i');
 // }}}

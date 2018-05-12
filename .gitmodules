@@ -16,9 +16,6 @@
 [submodule "vimperator/vimperator/vimp_paper"]
 	path = vimperator/vimperator/vimp_paper
 	url = git@github.com:2GMon/vimp_paper.git
-[submodule "tmux/tmux/plugins/tpm"]
-	path = tmux/tmux/plugins/tpm
-	url = https://github.com/tmux-plugins/tpm
 [submodule "awesome/lain"]
 	path = awesome/lain
 	url = https://github.com/copycat-killer/lain.git

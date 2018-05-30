@@ -7,12 +7,7 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "spacebar",
-            "modifiers": {
-              "optional": [
-                "caps_lock"
-              ]
-            }
+            "key_code": "spacebar"
           },
           "to": [
           ],
@@ -47,12 +42,7 @@
           "from": {
             "key_code": "h",
             "modifiers": {
-              "optional": [
-                "caps_lock",
-                "command",
-                "option",
-                "fn"
-              ]
+              "optional": [ "any" ]
             }
           },
           "to": [
@@ -68,7 +58,7 @@
             },
             {
               "type": "variable_if",
-              "name": "vi_visual_mode",
+              "name": "firefox_tab_change_mode",
               "value": 0
             }
           ]
@@ -78,12 +68,7 @@
           "from": {
             "key_code": "j",
             "modifiers": {
-              "optional": [
-                "caps_lock",
-                "command",
-                "option",
-                "fn"
-              ]
+              "optional": [ "any" ]
             }
           },
           "to": [
@@ -99,7 +84,7 @@
             },
             {
               "type": "variable_if",
-              "name": "vi_visual_mode",
+              "name": "firefox_tab_change_mode",
               "value": 0
             }
           ]
@@ -109,12 +94,7 @@
           "from": {
             "key_code": "k",
             "modifiers": {
-              "optional": [
-                "caps_lock",
-                "command",
-                "option",
-                "fn"
-              ]
+              "optional": [ "any" ]
             }
           },
           "to": [
@@ -130,7 +110,7 @@
             },
             {
               "type": "variable_if",
-              "name": "vi_visual_mode",
+              "name": "firefox_tab_change_mode",
               "value": 0
             }
           ]
@@ -140,12 +120,7 @@
           "from": {
             "key_code": "l",
             "modifiers": {
-              "optional": [
-                "caps_lock",
-                "command",
-                "option",
-                "fn"
-              ]
+              "optional": [ "any" ]
             }
           },
           "to": [
@@ -161,7 +136,7 @@
             },
             {
               "type": "variable_if",
-              "name": "vi_visual_mode",
+              "name": "firefox_tab_change_mode",
               "value": 0
             }
           ]
@@ -169,10 +144,51 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "h",
-            "modifiers": {
-              "mandatory": [ "shift" ]
+            "key_code": "1"
+          },
+          "to_if_alone": [
+            {
+              "key_code": "1"
             }
+          ],
+          "parameters": {
+            "basic.to_if_alone_timeout_milliseconds": 250,
+            "basic.to_if_held_down_threshold_milliseconds": 50
+          },
+          "to_if_held_down": [
+            {
+              "set_variable": {
+                "name": "firefox_tab_change_mode",
+                "value": 1
+              }
+            }
+          ],
+          "to_after_key_up": [
+            {
+              "set_variable": {
+                "name": "firefox_tab_change_mode",
+                "value": 0
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "vi_mode",
+              "value": 1
+            },
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^org\\.mozilla\\.firefox"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "h"
           },
           "to": [
             {
@@ -188,24 +204,15 @@
             },
             {
               "type": "variable_if",
-              "name": "vi_visual_mode",
-              "value": 0
-            },
-            {
-              "type": "frontmost_application_if",
-              "bundle_identifiers": [
-                "^org\\.mozilla\\.firefox"
-              ]
+              "name": "firefox_tab_change_mode",
+              "value": 1
             }
           ]
         },
         {
           "type": "basic",
           "from": {
-            "key_code": "l",
-            "modifiers": {
-              "mandatory": [ "shift" ]
-            }
+            "key_code": "l"
           },
           "to": [
             {
@@ -221,14 +228,8 @@
             },
             {
               "type": "variable_if",
-              "name": "vi_visual_mode",
-              "value": 0
-            },
-            {
-              "type": "frontmost_application_if",
-              "bundle_identifiers": [
-                "^org\\.mozilla\\.firefox"
-              ]
+              "name": "firefox_tab_change_mode",
+              "value": 1
             }
           ]
         }

@@ -144,6 +144,58 @@
         {
           "type": "basic",
           "from": {
+            "key_code": "u",
+            "modifiers": {
+              "optional": [ "any" ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "page_up"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "vi_mode",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "firefox_tab_change_mode",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "m",
+            "modifiers": {
+              "optional": [ "any" ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "page_down"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "vi_mode",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "firefox_tab_change_mode",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
             "key_code": "1"
           },
           "to_if_alone": [

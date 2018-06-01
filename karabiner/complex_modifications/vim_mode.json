@@ -55,11 +55,6 @@
               "type": "variable_if",
               "name": "vi_mode",
               "value": 1
-            },
-            {
-              "type": "variable_if",
-              "name": "firefox_tab_change_mode",
-              "value": 0
             }
           ]
         },
@@ -81,11 +76,6 @@
               "type": "variable_if",
               "name": "vi_mode",
               "value": 1
-            },
-            {
-              "type": "variable_if",
-              "name": "firefox_tab_change_mode",
-              "value": 0
             }
           ]
         },
@@ -107,11 +97,6 @@
               "type": "variable_if",
               "name": "vi_mode",
               "value": 1
-            },
-            {
-              "type": "variable_if",
-              "name": "firefox_tab_change_mode",
-              "value": 0
             }
           ]
         },
@@ -133,11 +118,6 @@
               "type": "variable_if",
               "name": "vi_mode",
               "value": 1
-            },
-            {
-              "type": "variable_if",
-              "name": "firefox_tab_change_mode",
-              "value": 0
             }
           ]
         },
@@ -159,11 +139,6 @@
               "type": "variable_if",
               "name": "vi_mode",
               "value": 1
-            },
-            {
-              "type": "variable_if",
-              "name": "firefox_tab_change_mode",
-              "value": 0
             }
           ]
         },
@@ -185,42 +160,18 @@
               "type": "variable_if",
               "name": "vi_mode",
               "value": 1
-            },
-            {
-              "type": "variable_if",
-              "name": "firefox_tab_change_mode",
-              "value": 0
             }
           ]
         },
         {
           "type": "basic",
           "from": {
-            "key_code": "1"
+            "key_code": "y"
           },
-          "to_if_alone": [
+          "to": [
             {
-              "key_code": "1"
-            }
-          ],
-          "parameters": {
-            "basic.to_if_alone_timeout_milliseconds": 250,
-            "basic.to_if_held_down_threshold_milliseconds": 50
-          },
-          "to_if_held_down": [
-            {
-              "set_variable": {
-                "name": "firefox_tab_change_mode",
-                "value": 1
-              }
-            }
-          ],
-          "to_after_key_up": [
-            {
-              "set_variable": {
-                "name": "firefox_tab_change_mode",
-                "value": 0
-              }
+              "key_code": "tab",
+              "modifiers": [ "control", "shift" ]
             }
           ],
           "conditions": [
@@ -240,31 +191,7 @@
         {
           "type": "basic",
           "from": {
-            "key_code": "h"
-          },
-          "to": [
-            {
-              "key_code": "tab",
-              "modifiers": [ "control", "shift" ]
-            }
-          ],
-          "conditions": [
-            {
-              "type": "variable_if",
-              "name": "vi_mode",
-              "value": 1
-            },
-            {
-              "type": "variable_if",
-              "name": "firefox_tab_change_mode",
-              "value": 1
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "l"
+            "key_code": "n"
           },
           "to": [
             {
@@ -279,9 +206,10 @@
               "value": 1
             },
             {
-              "type": "variable_if",
-              "name": "firefox_tab_change_mode",
-              "value": 1
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^org\\.mozilla\\.firefox"
+              ]
             }
           ]
         }

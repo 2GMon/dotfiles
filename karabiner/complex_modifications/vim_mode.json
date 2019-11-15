@@ -1,8 +1,8 @@
 {
-  "title": "Vi Mode (rev 4.3)",
+  "title": "Vi Mode",
   "rules": [
     {
-      "description": "Vi Mode [Space as Trigger Key] (recommended)",
+      "description": "Vi Mode [Space as Trigger Key]",
       "manipulators": [
         {
           "type": "basic",
@@ -10,6 +10,12 @@
             "key_code": "spacebar"
           },
           "to": [
+            {
+              "set_variable": {
+                "name": "vi_mode",
+                "value": 1
+              }
+            }
           ],
           "to_if_alone": [
             {
@@ -20,14 +26,6 @@
             "basic.to_if_alone_timeout_milliseconds": 250,
             "basic.to_if_held_down_threshold_milliseconds": 50
           },
-          "to_if_held_down": [
-            {
-              "set_variable": {
-                "name": "vi_mode",
-                "value": 1
-              }
-            }
-          ],
           "to_after_key_up": [
             {
               "set_variable": {
@@ -197,6 +195,62 @@
             {
               "key_code": "tab",
               "modifiers": [ "control" ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "vi_mode",
+              "value": 1
+            },
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^org\\.mozilla\\.firefox"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "y",
+            "modifiers": {
+              "optional": [ "shift" ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "page_up",
+              "modifiers": [ "control", "shift" ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "vi_mode",
+              "value": 1
+            },
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^org\\.mozilla\\.firefox"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "n",
+            "modifiers": {
+              "optional": [ "shift" ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "page_down",
+              "modifiers": [ "control", "shift" ]
             }
           ],
           "conditions": [

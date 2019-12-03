@@ -1,18 +1,5 @@
 #!/bin/sh
 
-# zsh
-if [ ! -e ~/.zshrc ]; then
-    ln -s ~/dotfiles/zsh/zshrc ~/.zshrc
-fi
-if [ ! -e ~/.zsh ]; then
-    ln -s ~/dotfiles/zsh/zsh ~/.zsh
-fi
-
-# mlterm
-if [ ! -e ~/.mlterm ]; then
-    ln -s ~/dotfiles/mlterm ~/.mlterm
-fi
-
 # tmux
 if [ ! -e ~/.tmux.conf ]; then
     ln -s ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
@@ -30,14 +17,6 @@ do
 done
 if [ ! -e ~/.vim ]; then
     ln -s ~/dotfiles/vim/vim ~/.vim
-fi
-
-# vimperator
-if [ ! -e ~/.vimperatorrc ]; then
-    ln -s ~/dotfiles/vimperator/vimperatorrc ~/.vimperatorrc
-fi
-if [ ! -e ~/.vimperator ]; then
-    ln -s ~/dotfiles/vimperator/vimperator ~/.vimperator
 fi
 
 # gcli

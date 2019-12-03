@@ -1,1 +1,0 @@
-../vimpr/plugin_loader.js

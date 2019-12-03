@@ -22,9 +22,12 @@ if [ ! -e ~/.tmux ]; then
 fi
 
 # vim
-if [ ! -e ~/.vimrc ]; then
-    ln -s ~/dotfiles/vim/vimrc ~/.vimrc
-fi
+for f in `ls ~/dotfiles/vim/vimrc*`
+do
+    if [ ! -e ~/.`basename ${f}` ]; then
+        ln -s ${f} ~/.`basename ${f}`
+    fi
+done
 if [ ! -e ~/.vim ]; then
     ln -s ~/dotfiles/vim/vim ~/.vim
 fi

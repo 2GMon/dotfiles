@@ -8,11 +8,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'kana/vim-submode'
 
 " Language Server Protocol
-Plug 'prabirshrestha/async.vim'
-Plug 'prabirshrestha/vim-lsp'
-Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
-Plug 'ryanolsonx/vim-lsp-typescript'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 " ファイルエンコードの設定
@@ -87,7 +83,7 @@ source ~/.vimrc.ft-ruby.vim
 source ~/.vimrc.gitv.vim
 source ~/.vimrc.ctrlp.vim
 source ~/.vimrc.submode.vim
-source ~/.vimrc.lsp.vim
+source ~/.vimrc.coc.vim
 
 if filereadable(".vimrc.project.vim")
   source .vimrc.project.vim

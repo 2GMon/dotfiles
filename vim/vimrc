@@ -81,13 +81,13 @@ cnoremap <M-b> <S-Left>
 " 次の単語へ移動
 cnoremap <M-f> <S-Right>
 
-source ~/.vimrc.ft.vim
+source ~/.vimrc.ft-vim.vim
 
-source ~/.vimrc.gitv
-source ~/.vimrc.ctrlp
-source ~/.vimrc.submode
-source ~/.vimrc.lsp
+source ~/.vimrc.gitv.vim
+source ~/.vimrc.ctrlp.vim
+source ~/.vimrc.submode.vim
+source ~/.vimrc.lsp.vim
 
-if filereadable(".vimrc.project")
-  source .vimrc.project
+if filereadable(".vimrc.project.vim")
+  source .vimrc.project.vim
 endif

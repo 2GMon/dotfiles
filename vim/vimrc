@@ -79,6 +79,7 @@ cnoremap <M-f> <S-Right>
 
 source ~/.vimrc.ft-vim.vim
 source ~/.vimrc.ft-ruby.vim
+source ~/.vimrc.ft-ts.vim
 
 source ~/.vimrc.gitv.vim
 source ~/.vimrc.ctrlp.vim

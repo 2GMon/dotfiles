@@ -3,6 +3,8 @@ nmap ,def <plug>(lsp-definition)
 nmap ,dia <plug>(lsp-document-diagnostics)
 nmap ,ref <plug>(lsp-references)
 
+let g:lsp_textprop_enabled = 0
+
 if executable('solargraph')
   " gem install solargraph
   au User lsp_setup call lsp#register_server({

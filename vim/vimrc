@@ -82,3 +82,7 @@ source ~/.vimrc.ft.vim
 source ~/.vimrc.gitv
 source ~/.vimrc.ctrlp
 source ~/.vimrc.submode
+
+if filereadable(".vimrc.project")
+  source .vimrc.project
+endif

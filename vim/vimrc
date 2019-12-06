@@ -6,6 +6,13 @@ Plug 'tpope/vim-fugitive'
 Plug 'gregsexton/gitv'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'kana/vim-submode'
+
+" Language Server Protocol
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'ryanolsonx/vim-lsp-typescript'
 call plug#end()
 
 " ファイルエンコードの設定
@@ -79,6 +86,7 @@ source ~/.vimrc.ft.vim
 source ~/.vimrc.gitv
 source ~/.vimrc.ctrlp
 source ~/.vimrc.submode
+source ~/.vimrc.lsp
 
 if filereadable(".vimrc.project")
   source .vimrc.project

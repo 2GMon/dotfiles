@@ -9,6 +9,8 @@ Plug 'kana/vim-submode'
 
 " Language Server Protocol
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+Plug 'scrooloose/nerdtree'
 call plug#end()
 
 " ファイルエンコードの設定
@@ -85,6 +87,7 @@ source ~/dotfiles/vim/vimrc.gitv.vim
 source ~/dotfiles/vim/vimrc.ctrlp.vim
 source ~/dotfiles/vim/vimrc.submode.vim
 source ~/dotfiles/vim/vimrc.coc.vim
+source ~/dotfiles/vim/vimrc.nerdtree.vim
 
 if filereadable(".vimrc.project.vim")
   source .vimrc.project.vim

@@ -2,7 +2,6 @@ let g:coc_global_extensions = [
             \ 'coc-solargraph',
             \ 'coc-tsserver' ,
             \ 'coc-tslint-plugin' ,
-            \ 'coc-phpls' ,
             \ ]
 
 set hidden

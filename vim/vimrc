@@ -79,6 +79,8 @@ cnoremap <M-b> <S-Left>
 " 次の単語へ移動
 cnoremap <M-f> <S-Right>
 
+nmap <leader>t :terminal ++close bash --login<CR>
+
 source ~/dotfiles/vim/vimrc.ft-vim.vim
 source ~/dotfiles/vim/vimrc.ft-ruby.vim
 source ~/dotfiles/vim/vimrc.ft-ts.vim

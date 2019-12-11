@@ -1,6 +1,8 @@
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_max_files = 50000
 
+let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:10,results:100'
+
 let g:ctrlp_prompt_mappings = {
             \ 'PrtDeleteEnt()':       ['<F7>', '<c-c>'],
             \ 'PrtExit()':            ['<esc>', '<c-g>'],

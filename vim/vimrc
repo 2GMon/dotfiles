@@ -84,6 +84,7 @@ nmap <leader>t :terminal ++close bash --login<CR>
 source ~/dotfiles/vim/vimrc.ft-vim.vim
 source ~/dotfiles/vim/vimrc.ft-ruby.vim
 source ~/dotfiles/vim/vimrc.ft-ts.vim
+source ~/dotfiles/vim/vimrc.ft-cpp.vim
 
 source ~/dotfiles/vim/vimrc.gitv.vim
 source ~/dotfiles/vim/vimrc.ctrlp.vim

@@ -1,4 +1,4 @@
-augroup ruby
+augroup typescript
   autocmd!
   autocmd FileType typescript setlocal shiftwidth=2
   autocmd FileType typescript setlocal tabstop=2

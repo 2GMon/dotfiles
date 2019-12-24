@@ -1,4 +1,4 @@
-augroup ruby
+augroup cpp
   autocmd!
   autocmd FileType cpp setlocal shiftwidth=2
   autocmd FileType cpp setlocal tabstop=2

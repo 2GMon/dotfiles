@@ -27,8 +27,8 @@ function! s:movetab(n)
 endfunction
 
 let s:movetab = ':<C-u>call ' . s:SIDP() . 'movetab(%d)<CR>'
-call submode#enter_with('movetab', 'n', '', 'gr', printf(s:movetab, 1))
-call submode#enter_with('movetab', 'n', '', 'gR', printf(s:movetab, -1))
-call submode#map('movetab', 'n', '', 'r', printf(s:movetab, 1))
-call submode#map('movetab', 'n', '', 'R', printf(s:movetab, -1))
+call submode#enter_with('movetab', 'n', '', 'gl', printf(s:movetab, 1))
+call submode#enter_with('movetab', 'n', '', 'gL', printf(s:movetab, -1))
+call submode#map('movetab', 'n', '', 'l', printf(s:movetab, 1))
+call submode#map('movetab', 'n', '', 'L', printf(s:movetab, -1))
 unlet s:movetab

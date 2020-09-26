@@ -5,6 +5,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-fugitive'
 Plug 'gregsexton/gitv'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'mattn/ctrlp-matchfuzzy'
 Plug 'kana/vim-submode'
 Plug 'leafgarland/typescript-vim'
 
@@ -96,3 +97,5 @@ source ~/dotfiles/vim/vimrc.nerdtree.vim
 if filereadable(".vimrc.project.vim")
   source .vimrc.project.vim
 endif
+
+let g:coc_disable_startup_warning = 1

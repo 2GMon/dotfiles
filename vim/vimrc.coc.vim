@@ -4,6 +4,7 @@ let g:coc_global_extensions = [
             \ 'coc-tslint-plugin' ,
             \ 'coc-eslint' ,
             \ 'coc-python' ,
+            \ 'coc-metals' ,
             \ ]
 
 set hidden

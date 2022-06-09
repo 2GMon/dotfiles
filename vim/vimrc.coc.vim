@@ -5,6 +5,7 @@ let g:coc_global_extensions = [
             \ 'coc-eslint' ,
             \ 'coc-python' ,
             \ 'coc-metals' ,
+            \ 'coc-flutter' ,
             \ ]
 
 set hidden

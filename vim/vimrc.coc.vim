@@ -6,6 +6,8 @@ let g:coc_global_extensions = [
             \ 'coc-jedi' ,
             \ 'coc-metals' ,
             \ 'coc-flutter' ,
+            \ 'coc-json' ,
+            \ 'coc-diagnostic' ,
             \ ]
 
 set hidden
@@ -13,11 +15,14 @@ set updatetime=300
 set signcolumn=yes
 
 " Use tab for trigger completion with characters ahead and navigate.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+" inoremap <silent><expr> <TAB>
+"       \ pumvisible() ? "\<C-n>" :
+"       \ <SID>check_back_space() ? "\<TAB>" :
+"       \ coc#refresh()
+" inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+inoremap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#next(0) : "\<TAB>"
+inoremap <expr> <S-TAB> coc#pum#visible() ? coc#pum#prev(0) : "\<S-TAB>"
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 
 function! s:check_back_space() abort
   let col = col('.') - 1

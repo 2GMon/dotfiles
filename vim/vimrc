@@ -8,6 +8,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mattn/ctrlp-matchfuzzy'
 Plug 'kana/vim-submode'
 Plug 'leafgarland/typescript-vim'
+Plug 'thinca/vim-quickrun'
 
 " Language Server Protocol
 Plug 'neoclide/coc.nvim', {'branch': 'release'}

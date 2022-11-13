@@ -1,0 +1,8 @@
+{
+    "diagnostic-languageserver.filetype": {
+        "python": ["flask8"]
+    },
+    "diagnostic-languageserver.formatFiletypes": {
+        "python": ["black"]
+    }
+}

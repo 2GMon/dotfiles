@@ -13,6 +13,11 @@ if [ ! -e ~/.vim ]; then
     ln -s ~/dotfiles/vim/vim ~/.vim
 fi
 
+# coc.vim
+if [ ! -e ~/.vim/coc-settings.json ]; then
+    ln -s ~/dotfiles/vim/coc-settings.json ~/.vim/
+fi
+
 # gcli
 if [ ! -e ~/.gcli ]; then
     ln -s ~/dotfiles/gcli ~/.gcli

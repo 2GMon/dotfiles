@@ -10,6 +10,7 @@ Plug 'kana/vim-submode'
 Plug 'leafgarland/typescript-vim'
 Plug 'thinca/vim-quickrun'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'Vimjas/vim-python-pep8-indent'
 
 " Language Server Protocol
 Plug 'neoclide/coc.nvim', {'branch': 'release'}

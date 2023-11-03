@@ -9,8 +9,9 @@ Plug 'mattn/ctrlp-matchfuzzy'
 Plug 'kana/vim-submode'
 Plug 'leafgarland/typescript-vim'
 Plug 'thinca/vim-quickrun'
-Plug 'editorconfig/editorconfig-vim'
-Plug 'Vimjas/vim-python-pep8-indent'
+Plug 'editorconfig/editorconfig-vim' " editorconfigに対応させる
+Plug 'junegunn/vim-easy-align'       " = や | を縦にそろえる
+Plug 'Vimjas/vim-python-pep8-indent' " PythonをPEP8インデントにする
 
 " Language Server Protocol
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -97,6 +98,7 @@ source ~/dotfiles/vim/vimrc.ctrlp.vim
 source ~/dotfiles/vim/vimrc.submode.vim
 source ~/dotfiles/vim/vimrc.coc.vim
 source ~/dotfiles/vim/vimrc.nerdtree.vim
+source ~/dotfiles/vim/vimrc.easy-align.vim
 
 if filereadable(".vimrc.project.vim")
   source .vimrc.project.vim

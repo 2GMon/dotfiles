@@ -59,6 +59,9 @@ nmap <leader>rn <Plug>(coc-rename)
 " Fix autofix problem of current line
 nmap <leader>qf  <Plug>(coc-fix-current)
 
+" Format
+nmap <leader>fm :<C-u>call CocAction('format')<cr>
+
 " Using CocList
 " Show all diagnostics
 nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>

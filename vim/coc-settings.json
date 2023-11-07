@@ -3,6 +3,6 @@
         "python": ["flake8", "mypy"]
     },
     "diagnostic-languageserver.formatFiletypes": {
-        "python": ["black"]
+        "python": ["autopep8"]
     }
 }

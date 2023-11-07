@@ -1,6 +1,6 @@
 {
-    "diagnostic-languageserver.filetype": {
-        "python": ["flask8"]
+    "diagnostic-languageserver.filetypes": {
+        "python": ["flake8", "mypy"]
     },
     "diagnostic-languageserver.formatFiletypes": {
         "python": ["black"]

@@ -3,7 +3,7 @@ filetype off
 
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-fugitive'
-Plug 'gregsexton/gitv'
+Plug 'cohama/agit.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mattn/ctrlp-matchfuzzy'
 Plug 'kana/vim-submode'
@@ -93,7 +93,7 @@ source ~/dotfiles/vim/vimrc.ft-ts.vim
 source ~/dotfiles/vim/vimrc.ft-cpp.vim
 source ~/dotfiles/vim/vimrc.ft-dart.vim
 
-source ~/dotfiles/vim/vimrc.gitv.vim
+source ~/dotfiles/vim/vimrc.agit.vim
 source ~/dotfiles/vim/vimrc.ctrlp.vim
 source ~/dotfiles/vim/vimrc.submode.vim
 source ~/dotfiles/vim/vimrc.coc.vim

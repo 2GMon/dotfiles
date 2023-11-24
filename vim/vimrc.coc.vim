@@ -4,6 +4,7 @@ let g:coc_global_extensions = [
             \ 'coc-tslint-plugin' ,
             \ 'coc-eslint' ,
             \ 'coc-jedi' ,
+            \ 'coc-go' ,
             \ 'coc-metals' ,
             \ 'coc-flutter' ,
             \ 'coc-json' ,

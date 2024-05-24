@@ -89,6 +89,7 @@ cnoremap <M-f> <S-Right>
 nmap <leader>t :terminal ++close bash --login<CR>
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
+inoremap jk <esc>
 
 source ~/dotfiles/vim/vimrc.ft-vim.vim
 source ~/dotfiles/vim/vimrc.ft-ruby.vim

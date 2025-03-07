@@ -16,6 +16,9 @@ require('jetpack.paq') {
   {"williamboman/mason.nvim"},
   {"williamboman/mason-lspconfig.nvim"},
 
+  {"akinsho/toggleterm.nvim", config = function() require("toggleterm").setup() end},
+  {"cohama/agit.vim"},
+
   {"hrsh7th/nvim-cmp"},
   {"hrsh7th/cmp-nvim-lsp"},
   {"hrsh7th/cmp-buffer"},

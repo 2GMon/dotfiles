@@ -1,5 +1,6 @@
 require('plugins.telescope')
+require('plugins.toggleterm')
+require('plugins.agit')
 require('plugins.submode')
 require('plugins.nvim-cmp')
-require('plugins.copilot')
 require('plugins.copilotchat')

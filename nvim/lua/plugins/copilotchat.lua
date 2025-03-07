@@ -55,3 +55,23 @@ require("CopilotChat").setup({
     },
   },
 })
+
+function CopilotChatBuffer()
+  local input = vim.fn.input("Quick Chat: ")
+  if input ~= "" then
+    require("CopilotChat").ask(input, { selection = require("CopilotChat.select").buffer })
+  end
+end
+
+-- <leader>ccq (Copilot Chat Quick) で Copilot とチャットする
+vim.api.nvim_set_keymap("n", "<leader>ccq", "<cmd>lua CopilotChatBuffer()<cr>", { noremap = true, silent = true })
+
+-- telescope を使ってアクションプロンプトを表示する
+function ShowCopilotChatActionPrompt()
+  local actions = require("CopilotChat.actions")
+  require("CopilotChat.integrations.telescope").pick(actions.prompt_actions())
+end
+
+-- キーマッピング
+-- <leader>ccp (Copilot Chat Prompt の略) でアクションプロンプトを表示する
+vim.api.nvim_set_keymap("n", "<leader>ccp", "<cmd>lua ShowCopilotChatActionPrompt()<cr>", { noremap = true, silent = true })

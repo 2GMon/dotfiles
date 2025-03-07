@@ -39,6 +39,11 @@ require('jetpack.paq') {
     event = "InsertEnter",
     config = function () require("copilot_cmp").setup() end
   },
+  {
+    "CopilotC-Nvim/CopilotChat.nvim",
+    requires = {"nvim-lua/plenary.nvim", "zbirenbaum/copilot.lua",},
+    build = "make tiktoken",
+  }
 }
 
 -- プラグイン自動インストール

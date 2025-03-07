@@ -16,6 +16,8 @@ require('jetpack.paq') {
   {"williamboman/mason.nvim"},
   {"williamboman/mason-lspconfig.nvim"},
 
+  {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'},
+
   {"akinsho/toggleterm.nvim", config = function() require("toggleterm").setup() end},
   {"cohama/agit.vim"},
 

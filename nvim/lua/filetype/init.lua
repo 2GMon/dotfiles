@@ -17,7 +17,6 @@ end
 return setmetatable(M, {
   __index = function()
     return function()
-      print('Unexpected filetype!')
     end
   end
 })

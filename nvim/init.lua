@@ -16,7 +16,13 @@ require('jetpack.paq') {
   {"williamboman/mason.nvim"},
   {"williamboman/mason-lspconfig.nvim"},
 
-  {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'},
+  {
+    'nvim-treesitter/nvim-treesitter',
+    run = function()
+      local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+      ts_update()
+    end,
+  },
 
   {"akinsho/toggleterm.nvim", config = function() require("toggleterm").setup() end},
   {"cohama/agit.vim"},
@@ -48,6 +54,19 @@ require('jetpack.paq') {
     "CopilotC-Nvim/CopilotChat.nvim",
     requires = {"nvim-lua/plenary.nvim", "zbirenbaum/copilot.lua",},
     build = "make tiktoken",
+  },
+  {
+    "yetone/avante.nvim",
+    requires = {
+      "nvim-treesitter/nvim-treesitter",
+      "stevearc/dressing.nvim",
+      "nvim-lua/plenary.nvim",
+      "MunifTanjim/nui.nvim",
+      "MeanderingProgrammer/render-markdown.nvim",
+      "hrsh7th/nvim-cmp",
+      "zbirenbaum/copilot.lua",
+    },
+    run = "make",
   }
 }
 

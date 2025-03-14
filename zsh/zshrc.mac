@@ -1,0 +1,38 @@
+left-prompt() {
+  local user="%n"
+  local host="%m"
+  local dir="%F{4}%~%f"
+  local next="%# "
+  echo -e "%F{green}${user}@${host}%f:${dir}${next}"
+}
+right-prompt() {
+  local time="%F{242}%*%f"
+  echo "${time}"
+}
+
+PROMPT=`left-prompt`
+RPROMPT=`right-prompt`
+
+add_newline() {
+  if [[ -z $PS1_NEWLINE_LOGIN ]]; then
+    PS1_NEWLINE_LOGIN=true
+  else
+    printf '\n'
+  fi
+}
+
+precmd() {
+  add_newline
+}
+
+alias ls='ls -F --color=auto'
+
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+eval "$(nodenv init -)"
+
+eval "$(pyenv init -)"
+
+source ~/.llm_api_key
+
+export PYTHONDONTWRITEBYTECODE=1

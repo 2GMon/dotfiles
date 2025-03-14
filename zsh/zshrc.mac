@@ -1,5 +1,5 @@
 fpath=(
-  /Library/Developer/CommandLineTools/usr/share/git-core/
+  /opt/homebrew/share/zsh/site-functions/
   ${fpath}
 )
 

@@ -1,8 +1,3 @@
-fpath=(
-  /opt/homebrew/share/zsh/site-functions/
-  ${fpath}
-)
-
 left-prompt() {
   local user="%n"
   local host="%m"
@@ -18,6 +13,7 @@ right-prompt() {
 PROMPT=`left-prompt`
 RPROMPT=`right-prompt`
 
+# コマンド終了後に1行空行をいれる
 add_newline() {
   if [[ -z $PS1_NEWLINE_LOGIN ]]; then
     PS1_NEWLINE_LOGIN=true
@@ -30,8 +26,16 @@ precmd() {
   add_newline
 }
 
+fpath=(
+  /opt/homebrew/share/zsh/site-functions/
+  ${fpath}
+)
+
 autoload -Uz compinit
 compinit
+
+# インストールしたコマンドを即補完候補に出す
+zstyle ":completion:*:commands" rehash 1
 
 alias ls='ls -F --color=auto'
 

@@ -27,6 +27,13 @@ require('jetpack.paq') {
   {"akinsho/toggleterm.nvim", config = function() require("toggleterm").setup() end},
   {"cohama/agit.vim"},
 
+  -- statusline
+  {
+    'nvim-lualine/lualine.nvim',
+    requires = {'nvim-tree/nvim-web-devicons'}
+  },
+
+  -- 補完
   {"hrsh7th/nvim-cmp"},
   {"hrsh7th/cmp-nvim-lsp"},
   {"hrsh7th/cmp-buffer"},
@@ -55,6 +62,8 @@ require('jetpack.paq') {
     requires = {"nvim-lua/plenary.nvim", "zbirenbaum/copilot.lua",},
     build = "make tiktoken",
   },
+
+  -- AI
   {
     "yetone/avante.nvim",
     requires = {
@@ -67,7 +76,16 @@ require('jetpack.paq') {
       "zbirenbaum/copilot.lua",
     },
     run = "make",
-  }
+  },
+
+  -- Jupyter
+  {"3rd/image.nvim"},
+  {
+    "benlubas/molten-nvim",
+    requires = "3rd/image.nvim",
+    run = ":UpdateRemotePlugins<CR>",
+  },
+  {"goerz/jupytext.nvim",},
 }
 
 -- プラグイン自動インストール
@@ -77,6 +95,14 @@ for _, name in ipairs(jetpack.names()) do
     jetpack.sync()
     break
   end
+end
+
+-- configuring Neovim to load user-installed Lua rocks:
+local path = require "plenary.path"
+local luarocks_path = path:new(vim.fn.expand(vim.fn.expand("$HOME") .. "/.luarocks"))
+if luarocks_path and luarocks_path.exists then
+  package.path = package.path .. ";" .. vim.fn.expand("$HOME") .. "/.luarocks/share/lua/5.1/?/init.lua;"
+  package.path = package.path .. ";" .. vim.fn.expand("$HOME") .. "/.luarocks/share/lua/5.1/?.lua;"
 end
 
 require('base')

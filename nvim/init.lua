@@ -86,6 +86,10 @@ require('jetpack.paq') {
     run = ":UpdateRemotePlugins<CR>",
   },
   {"goerz/jupytext.nvim",},
+
+  {"shellRaining/hlchunk.nvim", config = function() require("hlchunk").setup({}) end}, -- コードブロックのハイライト
+  {"nvim-treesitter/nvim-treesitter-context",}, -- コンテキストを上部に表示
+  {"Bekaboo/dropbar.nvim",}, -- パンくずリスト
 }
 
 -- プラグイン自動インストール

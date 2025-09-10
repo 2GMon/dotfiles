@@ -113,11 +113,4 @@ require('base')
 require('appearance')
 require('plugins')
 require('lsp')
-
-local my_filetype = require('filetype')
-vim.api.nvim_create_augroup('vimrc_augroup', {})
-vim.api.nvim_create_autocmd('FileType', {
-  group = 'vimrc_augroup',
-  pattern = '*',
-  callback = function(args) my_filetype[args.match]() end
-})
+require('autocmd')

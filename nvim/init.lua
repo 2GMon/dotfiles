@@ -92,14 +92,6 @@ for _, name in ipairs(jetpack.names()) do
   end
 end
 
--- configuring Neovim to load user-installed Lua rocks:
-local path = require "plenary.path"
-local luarocks_path = path:new(vim.fn.expand(vim.fn.expand("$HOME") .. "/.luarocks"))
-if luarocks_path and luarocks_path.exists then
-  package.path = package.path .. ";" .. vim.fn.expand("$HOME") .. "/.luarocks/share/lua/5.1/?/init.lua;"
-  package.path = package.path .. ";" .. vim.fn.expand("$HOME") .. "/.luarocks/share/lua/5.1/?.lua;"
-end
-
 require('base')
 require('appearance')
 require('plugins')

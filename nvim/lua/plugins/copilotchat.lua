@@ -31,12 +31,6 @@ require("CopilotChat").setup({
       mapping = '<leader>ct',
       description = "テストコード作成をお願いする",
     },
-    FixDiagnostic = {
-      prompt = 'コードの診断結果に従って問題を修正してください。修正内容の説明は日本語でお願いします。',
-      mapping = '<leader>cd',
-      description = "コードの修正をお願いする",
-      selection = require('CopilotChat.select').diagnostics,
-    },
     Commit = {
       prompt =
       '実装差分に対するコミットメッセージを日本語で記述してください。',

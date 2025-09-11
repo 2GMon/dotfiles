@@ -23,6 +23,7 @@ require('jetpack.paq') {
       ts_update()
     end,
   },
+  {"nvim-treesitter/nvim-treesitter-context",}, -- コンテキストを上部に表示
 
   {"akinsho/toggleterm.nvim", config = function() require("toggleterm").setup() end},
   {"cohama/agit.vim"},
@@ -34,16 +35,11 @@ require('jetpack.paq') {
   },
 
   -- 補完
-  {"hrsh7th/nvim-cmp"},
-  {"hrsh7th/cmp-nvim-lsp"},
-  {"hrsh7th/cmp-buffer"},
-  {"hrsh7th/cmp-path"},
-  {"hrsh7th/cmp-cmdline"},
-  {"hrsh7th/cmp-vsnip"},
-  {"hrsh7th/vim-vsnip"},
+  { "rafamadriz/friendly-snippets" },
   {
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
+    event = "InsertEnter",
     config = function()
       require("copilot").setup({
         suggestion = { enabled = false },
@@ -51,11 +47,11 @@ require('jetpack.paq') {
       })
     end
   },
-  {
-    "zbirenbaum/copilot-cmp",
-    requires = "zbirenbaum/copilot.lua",
-    event = "InsertEnter",
-    config = function () require("copilot_cmp").setup() end
+  {"saghen/blink.cmp",
+    tag = "v1.6.0",
+    requires = {
+      "fang2hou/blink-copilot",
+    },
   },
   {
     "CopilotC-Nvim/CopilotChat.nvim",
@@ -63,23 +59,14 @@ require('jetpack.paq') {
     build = "make tiktoken",
   },
 
-  -- AI
-  {
-    "yetone/avante.nvim",
-    requires = {
-      "nvim-treesitter/nvim-treesitter",
-      "stevearc/dressing.nvim",
-      "nvim-lua/plenary.nvim",
-      "MunifTanjim/nui.nvim",
-      "MeanderingProgrammer/render-markdown.nvim",
-      "hrsh7th/nvim-cmp",
-      "zbirenbaum/copilot.lua",
-    },
-    run = "make",
-  },
-
-  {"shellRaining/hlchunk.nvim", config = function() require("hlchunk").setup({}) end}, -- コードブロックのハイライト
-  {"nvim-treesitter/nvim-treesitter-context",}, -- コンテキストを上部に表示
+  {"shellRaining/hlchunk.nvim",
+    config = function()
+      require("hlchunk").setup({
+        chunk = { enable = true },
+        indent = { enable = true },
+      })
+    end,
+  }, -- コードブロックのハイライト
   {"Bekaboo/dropbar.nvim",}, -- パンくずリスト
 }
 

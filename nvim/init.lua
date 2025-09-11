@@ -68,6 +68,7 @@ require('jetpack.paq') {
     end,
   }, -- コードブロックのハイライト
   {"Bekaboo/dropbar.nvim",}, -- パンくずリスト
+  {"brianhuster/unnest.nvim"},
 }
 
 -- プラグイン自動インストール

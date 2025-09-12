@@ -9,6 +9,7 @@ end
 vim.cmd('packadd vim-jetpack')
 require('jetpack.paq') {
   {'tani/vim-jetpack'},
+  {"akinsho/toggleterm.nvim", config = function() require("toggleterm").setup() end},
   {'nvim-telescope/telescope.nvim', requires = 'nvim-lua/plenary.nvim'},
   {'nvim-telescope/telescope-fzf-native.nvim', run = 'make'},
   {'pogyomo/submode.nvim'},
@@ -25,7 +26,6 @@ require('jetpack.paq') {
   },
   {"nvim-treesitter/nvim-treesitter-context",}, -- コンテキストを上部に表示
 
-  {"akinsho/toggleterm.nvim", config = function() require("toggleterm").setup() end},
   {"cohama/agit.vim"},
 
   -- statusline

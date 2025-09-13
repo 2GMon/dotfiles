@@ -35,7 +35,6 @@ require('jetpack.paq') {
   },
 
   -- 補完
-  { "rafamadriz/friendly-snippets" },
   {
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
@@ -50,6 +49,7 @@ require('jetpack.paq') {
   {"saghen/blink.cmp",
     tag = "v1.6.0",
     requires = {
+      "rafamadriz/friendly-snippets",
       "fang2hou/blink-copilot",
     },
   },

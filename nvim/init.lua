@@ -12,6 +12,7 @@ require('jetpack.paq') {
   {"akinsho/toggleterm.nvim", config = function() require("toggleterm").setup() end},
   {'nvim-telescope/telescope.nvim', requires = 'nvim-lua/plenary.nvim'},
   {'nvim-telescope/telescope-fzf-native.nvim', run = 'make'},
+  {"nvim-telescope/telescope-ui-select.nvim"},
   {'pogyomo/submode.nvim'},
   {"neovim/nvim-lspconfig"},
   {"williamboman/mason.nvim"},

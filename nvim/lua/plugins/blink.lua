@@ -5,7 +5,48 @@ require("blink.cmp").setup({
     ["<S-Tab>"] = { "select_prev", "snippet_backward", "fallback" },
   },
   completion = {
-    documentation = { auto_show = true },
+    documentation = {
+      auto_show = true,
+      treesitter_highlighting = true,
+      window = { border = "rounded" },
+    },
+    menu = {
+      border = "rounded",
+      draw = {
+        columns = {
+          { "kind_icon", "label", gap = 1 },
+          { "kind", gap = 1 },
+          {"source_name" },
+        },
+        treesitter = { "lsp" },
+        components = {
+          kind_icon = {
+            highlight = "CmpItemKind",
+          },
+          label = {
+            text = function(item)
+              return item.label
+            end,
+          },
+          kind = {
+            text = function(item)
+              return item.kind
+            end,
+            highlight = "CmpItemKind",
+          },
+          source_name = {
+            text = function(item)
+              return "[" .. item.source_name .. "]"
+            end,
+            highlight = "Comment",
+          },
+        },
+      }
+    },
+    ghost_text = {
+      enabled = true,
+    },
+
   },
   cmdline = {
     keymap = {

@@ -25,9 +25,36 @@ require('jetpack.paq') {
       ts_update()
     end,
   },
-  {"nvim-treesitter/nvim-treesitter-context",}, -- コンテキストを上部に表示
+  -- {"nvim-treesitter/nvim-treesitter-context",}, -- コンテキストを上部に表示
 
   {"cohama/agit.vim"},
+
+  {"MeanderingProgrammer/render-markdown.nvim",
+    config = function()
+      require("render-markdown").setup({
+        file_types = { "markdown", "codecompanion" },
+        completions = { lsp = { enabled = true } },
+      })
+    end,
+  },
+  {"HakonHarnes/img-clip.nvim",
+    config = function()
+      require("img-clip").setup({
+        filetypes = {
+          codecompanion = {
+            prompt_for_file_name = false,
+            template = "[Image]($FILE_PATH)",
+            use_absolute_path = true,
+          },
+        },
+      })
+    end,
+  },
+  {"nvim-mini/mini.diff",
+    config = function()
+      require("mini.diff").setup()
+    end,
+  },
 
   -- statusline
   {
@@ -67,6 +94,23 @@ require('jetpack.paq') {
   }, -- コードブロックのハイライト
   {"Bekaboo/dropbar.nvim",}, -- パンくずリスト
   {"brianhuster/unnest.nvim"},
+
+  -- AI
+  {"ravitemer/mcphub.nvim",
+    requires = {
+      "nvim-lua/plenary.nvim",
+    },
+    build = "npm install -g mcp-hub@latest"
+  },
+  {"olimorris/codecompanion.nvim",
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "ravitemer/mcphub.nvim",
+      "MeanderingProgrammer/render-markdown.nvim",
+      "nvim-mini/mini.diff",
+      "HakonHarnes/img-clip.nvim",
+    }
+  }
 }
 
 -- プラグイン自動インストール

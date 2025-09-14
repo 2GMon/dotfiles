@@ -4,6 +4,7 @@ require("blink.cmp").setup({
     ["<Tab>"] = { "select_next", "snippet_forward", "fallback" },
     ["<S-Tab>"] = { "select_prev", "snippet_backward", "fallback" },
   },
+  enabled = function() return not vim.tbl_contains({ "copilot-chat" }, vim.bo.filetype) end,
   completion = {
     documentation = {
       auto_show = true,
@@ -54,7 +55,7 @@ require("blink.cmp").setup({
     },
   },
   sources = {
-    default = { "copilot", "lsp", "buffer", "snippets", "path"  },
+    default = { "copilot", "lsp", "buffer", "snippets", "path" },
     providers = {
       copilot = {
         name = "copilot",

@@ -29,14 +29,6 @@ require('jetpack.paq') {
 
   {"cohama/agit.vim"},
 
-  {"MeanderingProgrammer/render-markdown.nvim",
-    config = function()
-      require("render-markdown").setup({
-        file_types = { "markdown", "codecompanion" },
-        completions = { lsp = { enabled = true } },
-      })
-    end,
-  },
   {"HakonHarnes/img-clip.nvim",
     config = function()
       require("img-clip").setup({
@@ -72,7 +64,6 @@ require('jetpack.paq') {
     end
   },
   {"saghen/blink.cmp",
-    tag = "v1.6.0",
     requires = {
       "rafamadriz/friendly-snippets",
       "fang2hou/blink-copilot",

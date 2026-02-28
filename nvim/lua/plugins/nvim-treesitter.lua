@@ -4,7 +4,7 @@ require'nvim-treesitter.configs'.setup {
     "editorconfig", "git_config", "git_rebase", "gitattributes",
     "gitcommit", "gitignore", "go", "gomod", "gosum", "gowork",
     "html", "ini", "javascript", "jq", "json", "json5", "jsonc",
-    "lua", "luadoc", "make",
+    "lua", "luadoc", "make", "markdown",
     "meson", "nginx", "passwd", "perl", "php", "phpdoc", "printf",
     "python", "regex", "ruby", "rust", "scala", "scss", "slim",
     "solidity", "sql", "terraform", "tmux", "toml", "tsv",

@@ -78,11 +78,6 @@ require('jetpack.paq') {
       "fang2hou/blink-copilot",
     },
   },
-  {
-    "CopilotC-Nvim/CopilotChat.nvim",
-    requires = {"nvim-lua/plenary.nvim", "zbirenbaum/copilot.lua",},
-    build = "make tiktoken",
-  },
 
   {"shellRaining/hlchunk.nvim",
     config = function()
@@ -95,22 +90,18 @@ require('jetpack.paq') {
   {"Bekaboo/dropbar.nvim",}, -- パンくずリスト
   {"brianhuster/unnest.nvim"},
 
-  -- AI
-  {"ravitemer/mcphub.nvim",
-    requires = {
-      "nvim-lua/plenary.nvim",
-    },
-    build = "npm install -g mcp-hub@latest"
+  -- markdownプレビュー
+  {
+    "selimacerbas/markdown-preview.nvim",
+    requires = { "selimacerbas/live-server.nvim" },
+    config = function()
+      require("markdown_preview").setup({
+        port = 8421,
+        open_browser = false,
+        debounce_ms = 300,
+      })
+    end,
   },
-  {"olimorris/codecompanion.nvim",
-    requires = {
-      "nvim-lua/plenary.nvim",
-      "ravitemer/mcphub.nvim",
-      "MeanderingProgrammer/render-markdown.nvim",
-      "nvim-mini/mini.diff",
-      "HakonHarnes/img-clip.nvim",
-    }
-  }
 }
 
 -- プラグイン自動インストール
